@@ -1,0 +1,38 @@
+\section{Natural Language Sentences}
+%what did we discover during the interviews? what characteristic should the system have?
+%Notice that, the description here, although rich, is at high level.
+
+(Alejandro and Isabel)
+
+The company *insert name*, owner of the expansive supermarket chain *insert name*, with more than 800 locations throughout the country, finds itself in need of a new database system. The primary objective of the company is to establish a dependable system for the storage and manipulation of essential data, which is characterized by its reliability, fast performance, and its intuitive interface.
+
+The system is required to meticulously record information concerning each supermarket; shop code, location, employees, inventory, sales records. Additionally, it must have information about each product, fostering uniformity across all supermarkets; product code, name, category, brand, price. The purpose for maintaining consistent product data between stores is to ensure that if a change is made in a specific item, for example base price, all the establishments will have identical information.
+
+Products will be identified by the product code. 
+
+
+
+
+Supermarket chains are ecosystems of commerce and convenience, offering a vast array of products and services to the communities they serve. A diverse team of employees collaborates to ensure the supermarket runs smoothly and efficiently. Next, we will delve deeper into the work and responsibilities of each employee.
+
+Cashiers are responsible for accurate checkouts and managing transaction issues, knowing how cashiers work. They should adjust product quantities in the database during purchases and returns. 
+
+Stock Clerks are in charge of maintaining organized shelves, monitor product quality, and update the database when new products arrive, ensuring its proper functioning. They also manage product expiration dates.
+
+Store Managers oversee daily operations, staff management, and store maintenance. They play a key role in ensuring exceptional customer service and safety during emergencies. They can access and edit the supermarket's database.
+
+Inventory Control Specialists monitor inventory levels, ensure stock availability, and maintain product quality. They organize the stock and send data to analysts, also managing the database by adding or removing products as needed.
+
+Data Analysts examine sales data from each supermarket to identify trends, customer behavior, and the effectiveness of promotions and pricing strategies. They play a crucial role in understanding customer preferences and purchase patterns.
+
+Human Resources Personnel handle employee recruitment, training, and performance tracking. They manage the employee database, updating information as needed.
+
+IT Specialists maintain IT services, including the loyalty app and database, to ensure smooth performance. They have administrative control over these services.
+
+Each role contributes to the seamless operation of the supermarket chain, from customer transactions to product management and data analysis.
+
+
+
+One of the new additions that the company aspires to incorporate is an application where clients can subscribe in order to access a variety of benefits such as discounts and information about the products in the different establishments, as well as earning points while shopping. Consequently, the database is mandated to encompass client information.
+
+Each individual account, specifically associated with a particular user, will be uniquely identified by an email address, which will be necessary to register on the app. Clients will be required to establish a password when creating the account, which will serve as the authentication method for accessing their respective account. The system will also have to store personal information, including full name, surname, date of birth, and preferred store location.
