@@ -1,37 +1,36 @@
 \section{Functional Requirements}
 
-The database must store all the data and metadata relative to acquisition sessions and all the connected information to correctly interpret them in the anomaly detection system. In particular, the system must store:
-\\
-\\
-• Stakehlders, including: Data analysts, HR Personnel, IT specialists, \\
-• Employees, including Stock clerks, Store manager, Inventory control specialist, \\
-• Record the details related to each task; as for example adding/deleting a new item or update an item's quantity at a specific shop, \\
-• Stakeholders data, including: name and surname, job description, \\
-• Stores' name, address, location and e-mail; \\
-• Employees of the specific shop center, including the manager; \\
-• Categories and products with quantities belong to the specific store; \\
+The database must store all the data and metadata relative to each login session of each person and all the connected information (in case of an emergency situation related with database). In particular, the system must store:
 
-The system must allow; \\
-• Employees and stakeholders to login and reach their personalized page; \\
-• Clients to login and sign up; \\
-• Clients to change their information; \\
-• Managers to add/delete a new employee to their store; \\
-• Stakeholders to add/delete a new manager to a store; \\
-• Employees to add/delete a new product in their store; \\
-• Employees to update a quantity of a specific product in their store; \\
-• Stakeholders/Managers to check stores and sales/orders; \\
-• Stakeholders/Managers to order new products to a store; \\
-•  \\
-•  \\
-•  \\
-•  \\
-•  \\
-•  \\
-• Manage multiple arrangements by each team/shop; \\
-• Allow the analysts to conduct statistical exploration from sales/orders of products; \\
+\begin{itemize}
+    \item Stakehlders, including: Data analysts, HR Personnel, IT specialists,
+    \item Employees, including: Stock clerks, Store manager, Inventory control specialist,
+    \item Record the details related to each task; as for example adding/deleting a new item or update an item's quantity at a specific shop,
+    \item Stakeholders data, including: name and surname, job description, 
+    \item Stores data, including: store code, name, address, location, stock level, employee list; 
+    \item Products data including: product code, name, price, VAT, category, supplier code;
+    \item Users data including: name, surname, their addresses, e-mail addresses and preferred store
+    \item Receipts data, including: List of products, date, Payment method, store location; 
+\end{itemize}
+The system must allow; 
+\begin{itemize}
+    \item Employees and stakeholders to login and reach their personalized page; 
+    \item Clients to login and sign up; 
+    \item Clients to change/update their information;
+    \item HR personnel to add/delete a new manager/employee to a store;
+    \item HR personnel to promote/demote an employee; 
+    \item Stock clerks to add/delete a new product in their store;
+    \item Stock clerks to update a quantity of a specific product in their store;
+    \item Managers to update the database of products, add/delete a product in deemed necessary; 
+    \item Data analysts to check stores and sales/orders; 
+    \item Inventory control specialist to order new products to the store;
+    \item Manage multiple arrangements by each team/shop;
+    \item Data analysts to conduct statistical exploration from sales/orders of products; 
+    \item IT specialists to maintain the database and interfere if necessary;
 
-• Users data; name, surname and their addresses, \\
-•  \\
-• Users data, with their role \\
-• Users data, with their role \\
+    \item Transfer of goods or employees from one store to another;
+    \item Different user permissions for different roles; for example the employees of a store cannot make any change of other stores' database; 
 
+\paragraph{} check the last 2 item!!
+
+\end{itemize}
