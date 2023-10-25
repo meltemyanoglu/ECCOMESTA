@@ -1,0 +1,190 @@
+NOTES MADE BY ISABEL
+
+
+Objectives of the System
+    The company requests for the development of a database system designed to collect, classify, store and manage comprehensive data sets from several supermarkets within. The specified system is intended to have strong data storage security while allowing users to query and edit order information efficiently.
+    Especially, the system is required to include fields for recording essential details, encompassing product names, descriptions, brands, categories, customer information, stock quantities, supplier data, and employlee records. Managers have the capability to efficiently perform tasks, such as accessing, deleting, and modifying information related to supermarket staff members.
+
+Interviews
+Several interviews were conducted to gather system requirements.
+Employees: administerial stakeholder interviews aid in understanding the company's strategic goals and requirements, guiding the structuring of the database system to meet articulated demands. I would add here like the Inventory specialist and the store clerks, so that the info about how to add, delete and ask for more products is done
+IT technicians: to clarify the current technical infrastructure to enable the integration of the planned database system, define the constraints of the prevailing systems, and articulate the prerequisites for compatibility.
+Final users: in order to be informed about final users' expectations from the system in order to provide efficient service and support to customers. In addition, information about the daily tasks that need to be completed and the difficulties encountered during this process is provided.
+
+Users and Stakeholders of the System
+        Add brief description of each one (?)
+Stock clerks 
+Store Manager
+Inventory Control Specialists
+Data Analyst
+Human Resources Personnel 
+IT Specialists
+Clients
+Company workers: Store and General
+
+
+Functional Requirements
+
+The database must store all the data and metadata relative to each login session of each person and all the connected information (in case of an emergency situation related with database). In particular, the system must store:
+●	Stakeholders, including: Data analysts, HR Personnel, IT specialists,
+●	Employees, including: Stock clerks, Store manager, Inventory control specialist,
+●	Record the details related to each task; as for example adding/deleting a new item or update an item's quantity at a specific shop,
+●	Stakeholders data, including: name and surname, job description, 
+●	Stores data, including: store code, name, address, location, stock level, employee list; 
+●	Products data including: product code, name, price, VAT, category, supplier code;
+●	Users data including: name, surname, their addresses, e-mail addresses and preferred store
+●	Receipts data, including: List of products, date, Payment method, store location; 
+
+
+The system must allow; 
+●	Employees and stakeholders to login and reach their personalized page; 
+●	Clients to login and sign up; (in the app)
+●	Clients to change/update their information; (in the app)
+●	HR personnel to add/delete a new manager/employee to a store;
+●	HR personnel to promote/demote an employee; 
+●	Stock clerks to add/delete a new product in their store;
+●	Stock clerks to update a quantity of a specific product in their store;
+●	Managers to update the database of products, add/delete a product in deemed necessary; 
+●	Data analysts to check stores and sales/orders; 
+●	Inventory control specialist to order new products to the store;
+●	Manage multiple arrangements by each team/shop;
+●	Data analysts to conduct statistical exploration from sales/orders of products; 
+●	 IT specialists to maintain the database and interfere if necessary;
+●	
+●	Transfer of goods or employees from one store to another;
+●	Different user permissions for different roles; for example the employees of a store cannot make any change of other stores' database;
+
+Natural Language Sentences
+Maybe for the supermarket chain we could use MERCADONE (similar to MERCADONA, because it is a Spanish supermarket, and stalking the teacher I noticed that he did his erasmus in Barcelona (Spain), so he might be happy(?) )
+The company *insert name*, owner of the expansive supermarket chain *insert name*, with more than 800 locations throughout the country, finds itself in need of a new database system. The primary objective of the company is to establish a dependable system for the storage and manipulation of essential data, which is characterized by its reliability, fast performance, and its intuitive interface.
+The system is required to meticulously record information concerning each supermarket; shop code, location, employees, inventory, sales records, etc. Additionally, it must have information about each product, fostering uniformity across all supermarkets; product code, name, category, price, etc. The purpose for maintaining consistent product data between stores is to ensure that if a change is made in a specific item, for example base price, all the establishments will have identical information.
+During opening hours, data is collected and stored in each supermarket. This ensures that the database is always updated and its accuracy is on point. When cargo trucks arrive at the supermarket, inventory control specialists must add each batch of products to the database, so it is clear that new items have arrived. They are also intended to get in contact with the suppliers in order to keep the stock on level. Products will be identified by the product code. This and more information will be obtained from the barcode printed in the item. 
+Continuing the process, when an item is scanned and purchased through the cashier, the system will know exactly what product is selected from the barcode and its quantity will be decreased in the database. The receipt will also have information such as the name of the product and the price, obtained from the database. In addition to that, stock clerks will be in charge to take stock every day after the supermarket is closed, making sure the number of products in store is the same as the one in the database, or in case of disarrangement, they must update the table. They are also responsible for removing the expired items from the shelves and to remove them from the database, as well as keeping the near expiration products in front, so the customers will pick them. Overseeing these operations is the store manager, who makes sure the supermarket works smoothly. They also have a crucial role when it comes to customer services, since they are the representative of each supermarket. 
+Regarding the human resources, when a new employee is hired, the department is in charge of adding it to the database, including the information needed. Besides, promotions are also reflected in the database and when an employee is fired, it is mandatory to delete it from the system. 
+In the case of any system issues, IT specialists are the ones in charge. They hold an administrative role and are responsible for keeping the database well-maintained. They are also the ones that manage access privileges of each user and keep the hierarchy in order. Moreover, data analysis also plays a crucial role in the company. They can only view the data, but they are in charge of making statistics, keeping track of the employees’ performance and the best-sellers.
+One of the new additions that the company aspires to incorporate a loyalty program, where clients can subscribe in order to access a variety of benefits such as discounts and information about the products in the different establishments, as well as earning points while shopping. It will be accessible via the web page or the phone application. Consequently, the database is mandated to encompass client information.
+Each individual account, specifically associated with a particular user, will be uniquely identified by an email address, which will be necessary to register on the program. Clients will be required to establish a password when creating the account, which will serve as the authentication method for accessing their respective account. The system will also have to store personal information, including full name, surname, date of birth, and preferred store location. This program will be granted access to the database, from which it will retrieve the necessary data for informing the users. Cashiers are also required to scan the user card, or the QR available in the app, so clients can use their discounts and earn points when shopping.
+ 
+Filtered Sentences 
+A company that owns a chain of supermarkets wants to acquire a new database system in order to store data about their supermarkets, products, and clients.
+
+Each supermarket will store the next information:
+●	Shop code: to identify it from other establishments
+●	Location: which will include region, city and address
+●	Employees: a list with every current employee as well as personal data about each one
+●	Sales record: with recent information about sales
+
+The users that will have access to the database are:
+●	Stock clerks: updating the database by removing expired products and taking stock every day
+●	Store Manager: editing the database as needed, can see all of the employee and the products in his shop 
+●	Inventory Control Specialists: in charge of adding the new products when the merchandise arrives and keeping the stock level in order by placing orders of products in need
+●	Data Analysts: view the database in order to make statistics and to study the performance of the supermarkets
+●	Human Resources Personnel: adding new employees when they are hired, promoting them and removing them from the database when they are fired
+●	IT Specialists: administrate the database, keeping it in order and functional
+Each role contributes to the seamless operation of the supermarket chain, from customer transactions to product management and data analysis.
+
+
+Products are characterized by:
+●	Product code or ID Products: to identify it from other products
+●	        UPC: stands for Universal Product Code, is a series of black lines that help identify a product. This symbol is encoded with a series of numbers known as the GTIN, which makes up a complete barcode
+●	Name: a brief description of the product. It can be printed in the receipt
+●	Price: shared across all the supermarkets
+●	VAT: percentage of tax (Standard rate: 22% Reduced rates: 10% and 5% Super-reduced rate: 4%)
+●	Category: to identify the type of product (frozen, cosmetic, alcohol, etc.)
+●	Supplier code: to identify the supplier in order to reorder the product
+
+Furthermore, each supermarket location will store the next information related to products:
+●	Stock level: quantity of an specific product in the store
+●	Re-Order level: minimum quantity that must be available in a supermarket
+●	Order Quantity: quantity that is ordered from the supplier when stock level is low
+
+Receipts will also be stored during one month, including:
+●	List of products: with the quantity of each one
+●	Date: year, month, day and hour
+●	Pay method: cash or card (with the needed information about each one)
+●	        Final Price: amount of money that is needed to be paid for the total purchase
+●	Supermarket location
+
+The data stored about clients registered in the loyalty program is:
+●	Email: to identify each user
+●	Password: used by the user to access its account
+●	Name and surname
+●	Date of birth
+●	Points: earned by shopping. Can be exchanged for discounts
+●	Prefered supermarket location: to inform the user about that supermarket’s discounts
+●	Receipts: made using loyalty program
+
+
+
+TERM GLOSSARY → Check WORD file !!
+
+Functional Requirements
+The database must store all the data and metadata relative to each login session of each person and all the connected information (in case of an emergency situation related with database). In particular, the system must store:
+            I would add like bold letters to the beginning 
+●	Stakeholders, including: Data analysts, HR Personnel, IT specialists,
+●	Employees, including: Stock clerks, Store manager (maybe as a stakeholder ? ), Inventory control specialist,
+●	Record the details related to each task; as for example adding/deleting a new item or update an item's quantity at a specific shop, Data validation and verification to ensure data accuracy
+●	Stakeholders data, including: name and surname, job description, 
+●	Stores data, including: store code, name, address, location, stock level, employee list; 
+●	Products data including: product code, name, price, VAT, category, supplier code;
+●	Users data including: name, surname, their addresses, e-mail addresses and preferred store
+●	Receipts data, including: List of products, date, Payment method, store location; 
+
+        Suggestion to add :
+        Security and Access Control
+        Reporting and Analytics
+        Data Integrity and Validation
+        Data Backup and Recovery
+        Supplier Management
+        Scalability
+
+
+The system must allow; 
+        Maybe we could add like headers to ‘order’ the things:
+User Authentication and Access Control:
+●	Employees and stakeholders to log in and access their personalized pages.
+●	Clients to log in and sign up.
+●	Clients to change/update their personal information.
+Human Resources Management:
+●	HR personnel to add/delete a new manager/employee to a store.
+●	HR personnel to promote/demote an employee.
+●	Transfer of goods or employees from one store to another.
+Inventory and Product Management:
+●	Stock clerks to add/delete a new product in their store.
+●	Stock clerks to update the quantity of a specific product in their store.
+●	Managers to update the database of products, add/delete a product as needed.
+●	Inventory control specialists to order new products for the store.
+Sales and Order Management:
+●	Data analysts to check stores and sales/orders.
+●	Data analysts to conduct statistical analysis of sales/orders of products.
+Database Maintenance and IT Support:
+●	IT specialists to maintain the database and intervene if necessary.
+Multi-Store Management:
+●	Transfer of goods or employees from one store to another;
+And maybe check for the security and backup things mentioned before
+
+
+
+Non Functional Requirements
+
+        And maybe check for the security and backup things mentioned before
+The system should; 
+●	Respond in acceptable time for user queries or transactions. 
+●	Documented clearly and be upgraded to new versions.;  (oh there is backup)
+●	Work with other software systems and databases through standardized interfaces and protocols.
+●	Internationalization to allow customers speaking various languages to utilize the system.
+●	Have different user permissions for different roles; for example the employees of a store cannot make any change of other stores' database; 
+
+
+Constraints
+
+The DBMS application should satisfy the following constraints:
+●	The employees of a store can see the products' quantities of another store but cannot change them. 
+●	For transferring goods, both store managers have to approve the transfer.
+●	Be implemented with PostgreSQL;
+●	Client side implemented using html, css, javascript and jquery;
+●	Server side implemented using Tomcat, java servlet, JSP, MVC and REST web services;
+●	Operating system: Linux.
+
+        I dont really know anything of this, so i assume its ok! :)
+
