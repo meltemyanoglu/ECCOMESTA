@@ -30,37 +30,34 @@
 \hline
 \textbf{Term} & \textbf{Description} & \textbf{Synonyms} & \textbf{Connection} \\\hline
 
-Product & An item or service that is created, manufactured, or provided for the usage of customers  &  &  Categories, Store, Brand, Price, SKU, Quantity, ID, UPC, Invoice \\\hline
+Product & An item or service that is created, manufactured, or provided for the usage of customers  & Item &  Categories, Store, Price, Quantity, ID, UPC \\\hline
 
-Customer & An entity that purchases commodities or services from a seller or provider. &  & Product, Store, Invoice, Price, Brand \\\hline
+Customer & An entity that purchases commodities or services from a seller or provider. & Customer & Product, Store, Receipt, Price, Manager, Employee \\\hline
 
-Store & Physical or online location where products, goods, or items are kept, displayed, and made available for purchase by customers.&  &  Product, Categories, SKU, Quantity, Employee, Invoice, Data Analyst   \\\hline
+Store & Physical or online location where products, goods, or items are kept, displayed, and made available for purchase by customers.& Shop &  Product, Categories, Quantity, Employee, Data Analyst   \\\hline
 
-Brand & A Brand is a product, service or concept that is publicly distinguished from other products, services or concepts. &  &  Product, Customer, Price, ID, UPC \\\hline
+%Brand should be deleted? Changed to Supplier
+Supplier & A company or entity that provides products and goods to the supermarket for resale to customers. & Dealer, Distributor &  Product, Store, Price, Category \\\hline
 
-Commodities & Raw materials or primary agricultural products that can be bought and sold.  & Goods & Product \\\hline
+Categories &  Classifications used to organize and group similar items or entities based on shared characteristics or attributes. & Section & Product, Customer? \\\hline
 
-Categories &  Classifications used to organize and group similar items or entities based on shared characteristics or attributes. &  & Product, Commodities? \\\hline
+Price & A certain amount of money or services that must be exchanged to acquire a particular product or service. & Cost, Fee & Product, Store, Employee?, Receipt \\\hline
 
-Price & A certain amount of money or services that must be exchanged to acquire a particular product or service. &  & Product, Brand, Store, Commodities, Invoice \\\hline
+Quantity in Stock &  It represents the total number of a specific product or item that is currently available for sale or use within a particular business or organization.  & Stock level & Product, Store, Employee Manager, ID, UPC \\\hline
 
-Stock Keeping Unit &  a unique alphanumeric code or number assigned to a specific product in a company's inventory. & SKU  & Product, Store, Brand?, Commodities, Quantity, ID, UPC \\\hline
+Manager &  An individual within an organization who holds a position of authority and responsibility for overseeing and coordinating the activities of a team, department, or specific area of a company. & Head of Store & Customer, Store, Quantity, Employee \\\hline
 
-Quantity in Stock &  It represents the total number of a specific product or item that is currently available for sale or use within a particular business or organization.  &  & Product, Store, Brand?, SKU, ID, UPC \\\hline
+Employee & An individual who works for an organization or employer in exchange for compensation, which may include wages, salaries, benefits, and other forms of remuneration. & Workers, Staff & Product, Customer, Store, Quantity, Manager \\\hline
 
-Manager &  An individual within an organization who holds a position of authority and responsibility for overseeing and coordinating the activities of a team, department, or specific area of a company. &  & Customer, Store, Price?, SKU?, Quantity, Employee \\\hline
+Product ID & a unique and alphanumeric or numeric code or identifier assigned to a specific product to distinguish it from other items within a database.  & Product Code & Product, UPC \\\hline
 
-Employee & An individual who works for an organization or employer in exchange for compensation, which may include wages, salaries, benefits, and other forms of remuneration. &  & Product, Customer, Store, Commodities, Quantity, Manager? \\\hline
+UPC & stands for Universal Product Code, is a standardized and widely recognized barcode system used for product identification in the retail and manufacturing industries. It consists of a unique 12-digit numerical code that represents a specific product.  & Barcode, Product Identification & Product, ID \\\hline
 
-Product ID & a unique and alphanumeric or numeric code or identifier assigned to a specific product to distinguish it from other items within a database.  &  & Product, Commodities, Brand?, SKU?, UPC? \\\hline
+Receipts &  A commercial document issued by a seller or service provider to a client, detailing the products provided, their quantity, prices and other relevant transaction information. & Product Invoice & Product, Customer, Price, ID, Store \\\hline
 
-UPC & stands for Universal Product Code, is a standardized and widely recognized barcode system used for product identification in the retail and manufacturing industries. It consists of a unique 12-digit numerical code that represents a specific product.  & Product Identification & Product, Commodities, Brand?, ID \\\hline
+Data Analyst & A professional who specializes in collecting, interpreting, and transforming data into meaningful insights. & Data Manager & Product, Store \\\hline
 
-Invoices &  A commercial document issued by a seller or service provider to a buyer or client, detailing the products or services provided, their quantity, prices and other relevant transaction information. &  & Product, Customer, Price, ID, Store \\\hline
 
-Data Analyst & A professional who specializes in collecting, interpreting, and transforming data into meaningful insights. &  & Product, Store, Brand, Commodities \\\hline
-
-\caption{Describe in this table the terms of your system}
 \label{tab:termGlossary}
 \end{longtable}
 
