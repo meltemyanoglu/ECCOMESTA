@@ -1,0 +1,78 @@
+\begin{longtable}{|p{.14\columnwidth}|p{.20\columnwidth} |p{.40\columnwidth}|p{.18\columnwidth} |} 
+\hline
+\textbf{Entity} & \textbf{Description} & \textbf{Attributes} & \textbf{Identifier}  \\\hline
+
+
+Product & Items sold in the supermarkets & \begin{itemize}
+        \vspace{-1em}
+        \item ProductID: unique identifier
+        \item Name: brief description of the product
+        \item UPC: Universal Product Code
+        \item VAT: Value-Added Tax
+        \item Price: the amount customer has to pay
+    \end{itemize}
+ &  ProductID \\\hline
+ 
+ Store & Where customers buy products & \begin{itemize}
+        \vspace{-1em}
+        \item StoreID: unique identifier
+        \item Location: the place where store is
+        \item Schedule: the store timetable
+        \item ManagerID: an employee who runs the store
+    \end{itemize}
+ &  StoreID \\\hline
+
+  Receipt & Contains information about each purchase & \begin{itemize}
+        \vspace{-1em}
+        \item ReceiptID: unique identifier
+        \item Date: the time when the payment is done
+        \item Quantity: how much the customer bought from a specific product
+        \item TotalPrice: the amount customer paid for all products
+        \item PaymentMethod: a way how customer made payment
+    \end{itemize}
+ &  ReceiptID \\\hline
+
+  Supplier & A company that supplies the product & \begin{itemize}
+        \vspace{-1em}
+        \item SupplierID: unique identifier
+        \item Address: the place where supplier is
+        \item ContactInfo: how to reach the supplier (phone,e-mail, etc.)
+        \item ContractDetails: details like MOQ, payment methods, where and how to deliver goods, penalties, etc. 
+    \end{itemize}
+ &  SupplierID \\\hline
+
+  Customer & A person who buys product at a store & \begin{itemize}
+        \vspace{-1em}
+        \item E-mail: unique identifier
+        \item Name
+        \item Surname
+        \item DateOfBirth
+        \item Gender
+        \item Password
+        \item LoyaltyPoints: represent the points of customer registered in the loyalty program
+    \end{itemize}
+ &  E-mail \\\hline
+
+  Category & to which products belong & \begin{itemize}
+        \vspace{-1em}
+        \item CategoryName: unique identifier
+    \end{itemize}
+ &  CategoryName \\\hline 
+
+  Employee & a person who works in a store & \begin{itemize}
+        \vspace{-1em}
+        \item EmployeeID: unique identifier
+        \item Name
+        \item Surname
+        \item HireDate: a time when an employee hired
+        \item Salary: amount to be paid an employee monthly
+    \end{itemize}
+ &  EmployeeID \\\hline
+
+  Position & a title of an employee & \begin{itemize}
+        \vspace{-1em}
+        \item PositionName: unique identifier
+    \end{itemize}
+ &  PositionName \\\hline
+
+\end{longtable}
