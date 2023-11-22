@@ -1,0 +1,161 @@
+\section{Logical Design}
+
+\subsection{Transformation of the Entity-Relationship Schema}
+
+
+\subsubsection{Redundancy Analysis }
+
+\textbf{Intentional redundancy}: storing the same data in different formats or representations. 
+
+\textbf{Extensional redundancy}: storing the same data in more than one place without a specific purpose or benefit.
+
+
+
+\subsubsection{Choice of Principal Identifiers}
+
+There are no circular dependencies among the weak entities and their owners in the schema, and the primary keys follow the best practices for choosing identifiers.
+
+\subsection{Analysis of Database Load}
+Since there is not any derived attribute in the provided ER-Schema, we provide the load analysis as if the Customer entity had the Customer Lifetime Value as derived attribute. Consider the following two operations that involve the redundant attribute CLValue:
+\begin{itemize}
+    \item O1: Store the transaction data into the loyalty program;
+
+    \begin{table}
+        \centering
+        \begin{tabular}{cccccc}
+             &  &  &  &  & \\
+             &  &  &  &  & \\
+             &  &  &  &  & \\
+             &  &  &  &  & \\
+
+        \begin{table}
+            \centering
+            \begin{tabular}{ccccc}
+
+                 \begin{table}
+                     \centering
+                     \begin{tabular}{c}
+                         \\
+                     \end{tabular}
+                     \caption{Caption}
+                     \label{tab:my_label}
+                 \end{table}
+                                  &  &  &  & \\
+                 &  &  &  & \\
+                 &  &  &  & \\
+                 &  &  &  & \\
+            \end{tabular}
+            \caption{Caption}
+            \label{tab:my_label}
+        \end{table}
+                \end{tabular}
+        \caption{Caption}
+        \label{tab:my_label}
+    \end{table}
+        \item O2: Calculate the CLV data for a specific customer in the loyalty program; 
+\end{itemize}
+
+\begin{longtable}{|p{.22\columnwidth}|p{.43\columnwidth} |p{.13\columnwidth}|p{.12\columnwidth} |}
+
+\hline
+\textbf{Operation} & \textbf{Description} & \textbf{Frequency} & \textbf{Type}  \\\hline
+
+O1: Store the transaction data &  Store the transaction data of a customer in the loyalty program if he/she enrolled & 20000/day & Online \\\hline
+
+O2: Calculate the CLV & Calculate the Lifetime value of the specific customer & 1/month & Offline \\\hline
+
+\caption{Frequency Table}
+\end{longtable}
+
+
+\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.16\columnwidth}|p{.16\columnwidth}|p{.16\columnwidth} |}
+
+\hline
+\textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}  \\\hline
+
+Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+
+Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+
+\caption{Frequency Table}
+\end{longtable}
+
+
+\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.16\columnwidth}|p{.16\columnwidth}|p{.16\columnwidth} |}
+
+\hline
+\textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}  \\\hline
+
+Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+
+Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+
+\caption{Frequency Table}
+\end{longtable}
+
+
+\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.16\columnwidth}|p{.16\columnwidth}|p{.16\columnwidth} |}
+
+\hline
+\textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}  \\\hline
+
+Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+
+Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+
+\caption{Frequency Table}
+\end{longtable}
+
+
+\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.16\columnwidth}|p{.16\columnwidth}|p{.16\columnwidth} |}
+
+\hline
+\textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}  \\\hline
+
+Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+
+Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+
+\caption{Frequency Table}
+\end{longtable}s
+
+
+\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.16\columnwidth}|p{.16\columnwidth}|p{.16\columnwidth} |}
+
+\hline
+\textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}  \\\hline
+
+Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+
+Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+
+\caption{Frequency Table}
+\end{longtable}
+
+
+\subsection{Relational Schema}
+\includegraphics[scale=0.45, angle=90]{pictures/FDB - HW2 - Relational Schema (1).jpeg}
+
+\subsection{Data Dictionary}
+
+\input{tables/data}
+
+\subsection{External Constraints}
+https://www.overleaf.com/project/65494d6e2dfdbe59123e4dc4
+
+
+What happens if a customer doesnt have an email or if doesn't wanna be part of the loyality programm ???????
+
+
+\begin{itemize}
+    \item Only the employees with the position of ‘Manager’ can check the information about other employees in the shop. They need to login in the system with their Manager identificator.
+    \item HR employees can edit the info of the employees.
+    \item Authorized employee can check and edit the information of the products.
+    \item Backups are meant to be done every shift change in order to avoid mistakes.
+    \item The employees of a store can see the products' quantities of another store but cannot change them.
+    \item Only one person can enter stock into a store. (login information is requested.)?? Can anyone view stocks? Do I need to log in to make changes?
+    \item No one except the stock tracker can see the stocks in the store. It cannot be renewed or changed.
+    \item Only 1 promotion can be applied to a product at the same store. Two promotions cannot be applied at the same time. This means that we cannot apply other promotions to the product until the previous one reaches its ending date. (Really like this one)
+\end{itemize}
+
+ 
