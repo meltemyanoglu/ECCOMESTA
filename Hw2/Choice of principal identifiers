@@ -1,0 +1,37 @@
+
+There are no circular dependencies among the weak entities and their owners in the schema, and the primary keys follow the best practices for choosing identifier  It is a primary key.
+key	description
+
+//product
+
+product ID
+barcode
+SKU
+Product name
+Category
+
+//customer
+
+Customer ID
+Loyalty card number
+Email address 
+Customer name 
+Phone number 
+
+//order	
+
+order ID
+Transaction ID
+Receipt number
+Order date
+Order time
+Store ID
+
+//suppliers	
+
+supplier ID
+company name
+tax identification number
+supplier name
+supplier address
+
