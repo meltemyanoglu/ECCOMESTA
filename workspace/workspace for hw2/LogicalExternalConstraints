@@ -1,0 +1,16 @@
+
+\subsection{External Constraints}
+https://www.overleaf.com/project/65494d6e2dfdbe59123e4dc4
+
+\begin{itemize}
+    \item Only the employees with the position of ‘Manager’ can check the information about other employees in the shop. They need to login in the system with their Manager identificator.
+    \item HR employees can edit the info of the employees.
+    \item Authorized employee can check and edit the information of the products.
+    \item Backups are meant to be done every shift change in order to avoid mistakes.
+    \item The employees of a store can see the products' quantities of another store but cannot change them.
+    \item Only one person can enter stock into a store and login information is requested.
+    \item No one except the stock tracker can see the stocks in the store. It cannot be renewed or changed.
+    \item Only 1 promotion can be applied to a product at the same store. Two promotions cannot be applied at the same time. This means that we cannot apply other promotions to the product until the previous one reaches its ending date.
+\end{itemize}
+
+ 
