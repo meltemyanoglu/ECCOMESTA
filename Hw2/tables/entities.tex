@@ -1,0 +1,79 @@
+\begin{longtable}{|p{.14\columnwidth}|p{.20\columnwidth} |p{.45\columnwidth}|p{.15\columnwidth} |} 
+\hline
+\textbf{Entity} & \textbf{Description} & \textbf{Attributes} & \textbf{Identifier}  \\\hline
+
+
+Product & Items sold in the supermarkets & \begin{itemize}
+        \vspace{-1.5em}
+        \item ProductID: unique identifier (serial)
+        \item Name: brief description of the product (text)
+        \item UPC: Universal Product Code (serial)
+        \item VAT: Value-Added Tax (float)
+        \item Price: the amount customer has to pay (float)
+    \end{itemize}
+ &  ProductID \\\hline
+ 
+ Store & Where customers buy products & \begin{itemize}
+        \vspace{-1.5em}
+        \item StoreID: unique identifier (serial)
+        \item Location: the place where store is (text)
+        \item Schedule: the store timetable (datetime)
+    \end{itemize}
+ &  StoreID \\\hline
+
+  Receipt & Contains information about each purchase & \begin{itemize}
+        \vspace{-1.5em}
+        \item ReceiptID: unique identifier (serial)
+        \item Date: the time when the payment is done (datetime)
+        \item TotalPrice: the amount customer paid for all products (float)
+        \item PaymentMethod: a way of how a customer made the payment (text)
+    \end{itemize}
+ &  ReceiptID \\\hline
+
+  Supplier & A company that supplies the product & \begin{itemize}
+        \vspace{-1.5em}
+        \item SupplierID: unique identifier (serial)
+        \item Address: the place where supplier is (text)
+        \item Phone: the telephone number of the supplier (text)
+        \item E-mail: Electronic mail address of the supplier (text)
+        \item ContractInfo: details of the contract between supplier and store (text)
+    \end{itemize}
+ &  SupplierID \\\hline
+
+  Customer & A client registered in the loyalty program & \begin{itemize}
+        \vspace{-1.5em}
+        \item E-mail: unique identifier (text)
+        \item Name: name of the customer (text)
+        \item Surname: surmane of the customer (text)
+        \item DateOfBirth: birth date of the customer (datetime)
+        \item Gender: Gender of the customer (text)
+        \item Password: the code required to enter the loyalty program (text)
+        \item LoyaltyPoints: represent the points of customer registered in the loyalty program (integer)
+    \end{itemize}
+ &  E-mail \\\hline
+
+  Category & Categories to which products belong & \begin{itemize}
+        \vspace{-1.5em}
+        \item CategoryName: unique identifier (text)
+    \end{itemize}
+ &  CategoryName \\\hline 
+
+  Employee & A person who works in a store & \begin{itemize}
+        \vspace{-1.5em}
+        \item EmployeeID: unique identifier (serial)
+        \item Name (text)
+        \item Surname (text)
+        \item HireDate: a time when an employee hired (datetime)
+        \item Salary: amount to be paid an employee monthly (float)
+    \end{itemize}
+ &  EmployeeID \\\hline
+
+  Position & A title of an employee & \begin{itemize}
+        \vspace{-1.5em}
+        \item PositionName: unique identifier (text)
+    \end{itemize}
+ &  PositionName \\\hline
+
+
+
+\end{longtable}
