@@ -1,88 +1,87 @@
 \begin{longtable}{|p{.15\columnwidth}|p{.15\columnwidth} |p{.30\columnwidth}|p{.10\columnwidth}|p{.20\columnwidth} |} 
-\hline
-\textbf{Relation} & \textbf{Attribute} & \textbf{Description} & \textbf{Domain} & \textbf{Constraints} \\\hline
-
-
-\multirow{5}{*}{\textbf{STORES}} & StockQuantity & Quantity available in the store & Int  & Not NULL  \\\cline{2-5}
-& ReOrderLevel & Minimum quantity that must be in the store & Int & Not NULL \\\cline{2-5} 
-& OrderQuantity  & Quantity of product that will be ordered & Int & Not NULL \\\cline{2-5}
-& ProductID & Identification of the product & Serial & Foreign key to Product, not NULL, primary key with StoreID \\\cline{2-5}
-& StoreID & Identification of the store & Serial & Foreign key to Store, not NULL, primary key with ProductID \\\hline
-
-\multirow{7}{*}{\textbf{PRODUCT}} 
-&ProductID &Identification of the product & Serial&Primary Key \\\cline{2-5}
-&UPC &Universal Product Code, standardized barcode symbology used for tracking items & Long & Not NULL\\\cline{2-5}
-&Name &Name of the product&Text&Not NULL \\\cline{2-5}
-&VAT &Value Added Tax &Float &Not NULL \\\cline{2-5}
-&Price &Price of the product &Int &Not NULL \\\cline{2-5}
-&Category &Category of the product & Text& Not NULL\\\cline{2-5}
-&SupplierID &Identification of the supplier of the product &Serial & Not NULL\\\hline
-
-\multirow{1}{*}{\textbf{CATEGORY}} 
-&CategoryName &Name of the category & Text ??& Primary Key, Not NULL\\\hline
-
-\multirow{5}{*}{\textbf{RECEIPT}} 
-&ReceiptID &Identification of the receipt &Serial? & Primary Key, Not NULL\\\cline{2-5}
-&TotalAmount &Total price of the purchase &Int & Not NULL\\\cline{2-5}
-&Date &Date of the purchase &Datetime &Not NULL \\\cline{2-5}
-&PaymentMethod &Type of payment used &Text ?? &Not NULL \\\cline{2-5}
-&StoreID &Identification of the store &Serial &Not NULL \\\hline
-
-\multirow{2}{*}{\textbf{BELONGS TO}} 
-&Email & Email of the customer & Text & Foreign Key to Customer, Primary Key with ReceiptID\\\cline{2-5}
-&ReceiptID & Identification of the receipt & Serial & Foreign Key to Receipt, Primary Key with Email, not NULL \\\hline
-
-\multirow{4}{*}{\textbf{PROMOTION}} 
-&Start-EndDates &Initial and final date of a promotion &Date &Not NULL \\\cline{2-5}
-&DiscountInfo &Information or description of the promotion  &Text&Not NULL \\\cline{2-5}
-&StoreID &Identification of the store that has the promotion &Serial & Foreign key to Store, not NULL, primary key with ProductID\\\cline{2-5}
-&ProductID &Identification of the product promoted &Serial &Foreign key to Product, not NULL, primary key with StoreID \\\hline
-
-
-\multirow{8}{*}{\textbf{CUSTOMER}} 
-&Email &Email of the customer &Text &Primary Key, Not NULL \\\cline{2-5}
-&Name &Name of the customer &Text &Not NULL \\\cline{2-5}
-&Surname &Surname of the customer &Text &Not NULL \\\cline{2-5}
-&Gender &Gender of the customer &Text &Not NULL \\\cline{2-5}
-&Password &Password of the customer &Text &Not NULL \\\cline{2-5}
-&DateOfBirth &Date of Birth of the customer &Datetime &Not NULL \\\cline{2-5}
-&LoyalityPoints &Number of loyalty points acquired &Int &Not NULL \\\cline{2-5}
-&StoreID &Identification of the preference store &Serial &Not NULL \\\hline
-
-\multirow{3}{*}{\textbf{CONTAINS}} 
-&Quantity &Quantity of product bought &Int &Not NULL \\\cline{2-5}
-&ReceiptID &Identification of the receipt &Serial &Foreign key to Receipt, not NULL, primary key with ProductID  \\\cline{2-5}
-&ProductID &Identification of the product &Serial &Foreign key to Product, not NULL, primary key with ReceiptID \\\hline
-
-\multirow{5}{*}{\textbf{SUPPLIER}} 
-&SupplierID &Identification of the supplier &Serial &Primary Key, Not NULL \\\cline{2-5}
-&Address &Address of the supplier & Text&Not NULL \\\cline{2-5}
-&Phone &Phone number of the supplier & Long &Not NULL \\\cline{2-5}
-&Email &Email of the supplier & Text &Not NULL \\\cline{2-5}
-&ContractDetails &Details and description of the contract between store and supplier &Text &Not NULL \\\hline
-
-\multirow{2}{*}{\textbf{SUPPLIES TO}} 
-&SupplierID &Identification of the supplier&Serial &Foreign key to Supplier, not NULL, primary key with StoreID \\\cline{2-5}
-&StoreID &Identification of the store &Serial &Foreign key to Store, not NULL, primary key with SupplierID \\\hline
-
-\multirow{4}{*}{\textbf{STORE}} 
-&StoreID &Identification of the store &Serial &Primary key, Not NULL \\\cline{2-5}
-&Location &Address of the store & Text&Not NULL \\\cline{2-5}
-&Schedule &Timetable of the store &Datetime &Not NULL \\\cline{2-5}
-&ManagerID &Identification of the manager of the store &Serial &Not NULL \\\hline
-
-\multirow{1}{*}{\textbf{POSITION}} 
-&PositionName &Name of the position held by the employees &Text & Primary Key, Not NULL \\\hline
-
-\multirow{7}{*}{\textbf{EMPLOYEE}} 
-&EmployeeID &Identification of the worker &Serial &Primary Key, Not NULL \\\cline{2-5}
-&Name &Name of the employee &Text &Not NULL \\\cline{2-5}
-&Surname &Surname of the employee &Text &Not NULL \\\cline{2-5}
-&HireDate &Date of the hire of the employee &Datetime &Not NULL \\\cline{2-5}
-&Salary &Salary of the employee &Double &Not NULL \\\cline{2-5}
-&Position &Name of their work position &Text &Not NULL \\\cline{2-5}
-&WorkStore &Identification of the store they work in &Serial &Not NULL \\\hline
-
-
-\end{longtable}
-
+    \hline
+    \textbf{Relation} & \textbf{Attribute} & \textbf{Description} & \textbf{Domain} & \textbf{Constraints} \\\hline
+    
+    
+    \multirow{5}{*}{\textbf{STORES}} & StockQuantity & Quantity available in the store & Int  & Not NULL  \\\cline{2-5}
+    & ReOrderLevel & Minimum quantity that must be in the store & Int & Not NULL \\\cline{2-5} 
+    & OrderQuantity  & Quantity of product that will be ordered & Int & Not NULL \\\cline{2-5}
+    & ProductID & Identification of the product & Serial & Foreign key to Product, not NULL, primary key with StoreID \\\cline{2-5}
+    & StoreID & Identification of the store & Serial & Foreign key to Store, not NULL, primary key with ProductID \\\hline
+    
+    \multirow{7}{*}{\textbf{PRODUCT}} 
+    &ProductID &Identification of the product & Serial&Primary Key \\\cline{2-5}
+    &UPC &Universal Product Code, standardized barcode symbology used for tracking items & Long & Not NULL\\\cline{2-5}
+    &Name &Name of the product&Text&Not NULL \\\cline{2-5}
+    &VAT &Value Added Tax &Float &Not NULL \\\cline{2-5}
+    &Price &Price of the product &Int &Not NULL \\\cline{2-5}
+    &Category &Category of the product & Text& Not NULL\\\cline{2-5}
+    &SupplierID &Identification of the supplier of the product &Serial & Not NULL\\\hline
+    
+    \multirow{1}{*}{\textbf{CATEGORY}} 
+    &CategoryName &Name of the category & Text & Primary Key, Not NULL\\\hline
+    
+    \multirow{5}{*}{\textbf{RECEIPT}} 
+    &ReceiptID &Identification of the receipt &Serial & Primary Key, Not NULL\\\cline{2-5}
+    &TotalAmount &Total price of the purchase &Int & Not NULL\\\cline{2-5}
+    &Date &Date of the purchase & Datetime &Not NULL \\\cline{2-5}
+    &PaymentMethod &Type of payment used &Text &Not NULL \\\cline{2-5}
+    &StoreID &Identification of the store &Serial &Not NULL \\\hline
+    
+    \multirow{2}{*}{\textbf{BELONGS TO}} 
+    &Email & Email of the customer & Text & Foreign Key to Customer, Primary Key with ReceiptID\\\cline{2-5}
+    &ReceiptID & Identification of the receipt & Serial & Foreign Key to Receipt, Primary Key with Email, not NULL \\\hline
+    
+    \multirow{4}{*}{\textbf{PROMOTION}} 
+    &Start-EndDates &Initial and final date of a promotion &Datetime &Not NULL \\\cline{2-5}
+    &DiscountInfo &Information or description of the promotion  &Text&Not NULL \\\cline{2-5}
+    &StoreID &Identification of the store that has the promotion &Serial & Foreign key to Store, not NULL, primary key with ProductID\\\cline{2-5}
+    &ProductID &Identification of the product promoted &Serial &Foreign key to Product, not NULL, primary key with StoreID \\\hline
+    
+    
+    \multirow{8}{*}{\textbf{CUSTOMER}} 
+    &Email &Email of the customer &Text &Primary Key, Not NULL \\\cline{2-5}
+    &Name &Name of the customer &Text &Not NULL \\\cline{2-5}
+    &Surname &Surname of the customer &Text &Not NULL \\\cline{2-5}
+    &Gender &Gender of the customer &Text &Not NULL \\\cline{2-5}
+    &Password &Password of the customer &Text &Not NULL \\\cline{2-5}
+    &DateOfBirth &Date of Birth of the customer &Datetime &Not NULL \\\cline{2-5}
+    &LoyalityPoints &Number of loyalty points acquired &Int &Not NULL \\\cline{2-5}
+    &StoreID &Identification of the preference store &Serial &Not NULL \\\hline
+    
+    \multirow{3}{*}{\textbf{CONTAINS}} 
+    &Quantity &Quantity of product bought &Int &Not NULL \\\cline{2-5}
+    &ReceiptID &Identification of the receipt &Serial &Foreign key to Receipt, not NULL, primary key with ProductID  \\\cline{2-5}
+    &ProductID &Identification of the product &Serial &Foreign key to Product, not NULL, primary key with ReceiptID \\\hline
+    
+    \multirow{5}{*}{\textbf{SUPPLIER}} 
+    &SupplierID &Identification of the supplier &Serial &Primary Key, Not NULL \\\cline{2-5}
+    &Address &Address of the supplier & Text&Not NULL \\\cline{2-5}
+    &Phone &Phone number of the supplier & Text &Not NULL \\\cline{2-5}
+    &Email &Email of the supplier & Text &Not NULL \\\cline{2-5}
+    &ContractDetails &Details and description of the contract between store and supplier &Text &Not NULL \\\hline
+    
+    \multirow{2}{*}{\textbf{SUPPLIES TO}} 
+    &SupplierID &Identification of the supplier&Serial &Foreign key to Supplier, not NULL, primary key with StoreID \\\cline{2-5}
+    &StoreID &Identification of the store &Serial &Foreign key to Store, not NULL, primary key with SupplierID \\\hline
+    
+    \multirow{4}{*}{\textbf{STORE}} 
+    &StoreID &Identification of the store &Serial &Primary key, Not NULL \\\cline{2-5}
+    &Location &Address of the store & Text&Not NULL \\\cline{2-5}
+    &Schedule &Timetable of the store &Datetime &Not NULL \\\cline{2-5}
+    &ManagerID &Identification of the manager of the store &Serial &Not NULL \\\hline
+    
+    \multirow{1}{*}{\textbf{POSITION}} 
+    &PositionName &Name of the position held by the employees &Text & Primary Key, Not NULL \\\hline
+    
+    \multirow{7}{*}{\textbf{EMPLOYEE}} 
+    &EmployeeID &Identification of the worker &Serial &Primary Key, Not NULL \\\cline{2-5}
+    &Name &Name of the employee &Text &Not NULL \\\cline{2-5}
+    &Surname &Surname of the employee &Text &Not NULL \\\cline{2-5}
+    &HireDate &Date of the hire of the employee &Datetime &Not NULL \\\cline{2-5}
+    &Salary &Salary of the employee &Float &Not NULL \\\cline{2-5}
+    &Position &Name of their work position &Text &Not NULL \\\cline{2-5}
+    &WorkStore &Identification of the store they work in &Serial &Not NULL \\\hline
+    
+    
+    \end{longtable}
