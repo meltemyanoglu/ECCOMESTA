@@ -3,159 +3,147 @@
 \subsection{Transformation of the Entity-Relationship Schema}
 
 
-\subsubsection{Redundancy Analysis }
+\subsubsection{Redundancy Analysis}
 
-\textbf{Intentional redundancy}: storing the same data in different formats or representations. 
-
-\textbf{Extensional redundancy}: storing the same data in more than one place without a specific purpose or benefit.
-
-
+\textbf{Intentional redundancy}: The schema does not contain any intentional redundancy. \\
+\textbf{Extensional redundancy}: The schema does not contain any cycle of entities.
 
 \subsubsection{Choice of Principal Identifiers}
 
 There are no circular dependencies among the weak entities and their owners in the schema, and the primary keys follow the best practices for choosing identifiers.
 
 \subsection{Analysis of Database Load}
-Since there is not any derived attribute in the provided ER-Schema, we provide the load analysis as if the Customer entity had the Customer Lifetime Value as derived attribute. Consider the following two operations that involve the redundant attribute CLValue:
+Assuming that the Customer entity had a derived attribute for the Customer Lifetime Value, we perform the load analysis on the given ER-Schema. We consider two operations that involve the redundant attribute CLV: 
+
 \begin{itemize}
-    \item O1: Store the transaction data into the loyalty program;
-
-    \begin{table}
-        \centering
-        \begin{tabular}{cccccc}
-             &  &  &  &  & \\
-             &  &  &  &  & \\
-             &  &  &  &  & \\
-             &  &  &  &  & \\
-
-        \begin{table}
-            \centering
-            \begin{tabular}{ccccc}
-
-                 \begin{table}
-                     \centering
-                     \begin{tabular}{c}
-                         \\
-                     \end{tabular}
-                     \caption{Caption}
-                     \label{tab:my_label}
-                 \end{table}
-                                  &  &  &  & \\
-                 &  &  &  & \\
-                 &  &  &  & \\
-                 &  &  &  & \\
-            \end{tabular}
-            \caption{Caption}
-            \label{tab:my_label}
-        \end{table}
-                \end{tabular}
-        \caption{Caption}
-        \label{tab:my_label}
-    \end{table}
-        \item O2: Calculate the CLV data for a specific customer in the loyalty program; 
+    \item O1: store the transaction data in the loyalty program;
+    \item O2: Calculate the CLV data for a specific customer in the loyalty program; 
 \end{itemize}
+
+\begin{center}
+\includegraphics[scale=0.23]{pictures/Customer_CLV.png}
+\end{center}
+
+Table 4 reports the description of each operation, its frequency and type. O1 is an online operation since the customer's receipt needs to be stored right after the transaction while O2 is related to statistical analysis conducted on the data and is batch operations.
+
 
 \begin{longtable}{|p{.22\columnwidth}|p{.43\columnwidth} |p{.13\columnwidth}|p{.12\columnwidth} |}
 
 \hline
 \textbf{Operation} & \textbf{Description} & \textbf{Frequency} & \textbf{Type}  \\\hline
 
-O1: Store the transaction data &  Store the transaction data of a customer in the loyalty program if he/she enrolled & 20000/day & Online \\\hline
+O1: Store the transaction data &  Store the transaction data of customers in the loyalty program if he/she enrolled & 10000/month & Online \\\hline
 
-O2: Calculate the CLV & Calculate the Lifetime value of the specific customer & 1/month & Offline \\\hline
-
-\caption{Frequency Table}
-\end{longtable}
-
-
-\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.16\columnwidth}|p{.16\columnwidth}|p{.16\columnwidth} |}
-
-\hline
-\textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}  \\\hline
-
-Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
-
-Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+O2: Calculate the CLV & Calculate the Lifetime value of a specific customer & 10/month & Batch \\\hline
 
 \caption{Frequency Table}
 \end{longtable}
 
 
-\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.16\columnwidth}|p{.16\columnwidth}|p{.16\columnwidth} |}
+Table 5 shows how often and in what way O1 accesses the data with redundancy. The Customer entity reads the data to determine the current number of receipts or current total amount of how much the customer spends and writes the data to change this number.
+
+\newpage
+\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.14\columnwidth}|p{.14\columnwidth}|p{.20\columnwidth} |}
 
 \hline
+\multicolumn{5}{|c|}{\textbf{Operation O1: 10000/month}}\\\hline
+
+\textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}\\\hline
+Receipt & Entity & 1 & W & 1x10000x2 = 20000 \\\hline
+Belongs\_To & Relationship & 1 & W & 1x10000x2 = 20000 \\\hline
+Customer & Entity & 1 & R & 1x10000x1 = 10000 \\\hline
+Customer & Entity & 1 & W & 1x10000x2 = 20000 \\\hline
+
+\multicolumn{4}{|c|}{\textbf{Total Access}} & \textbf{70000} \\\hline
+
+\caption{Access/volume Table for O1 with redundancy}
+\end{longtable}
+
+Table 6 shows how O2 uses the data that is with redundancy. Because of the redundancy, O2 only needs to access the Customer entity once to get all the information it needs.
+
+
+\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.14\columnwidth}|p{.14\columnwidth}|p{.20\columnwidth} |}
+
+\hline
+\multicolumn{5}{|c|} {\textbf{Operation O2: 10/month}}\\\hline
+
 \textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}  \\\hline
 
-Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+Customers &  Entity & 1 & R & 1x10x1 = 10  \\\hline
 
-Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+\multicolumn{4}{|c|}{\textbf{Total Access}}  & \textbf{10} \\\hline
 
-\caption{Frequency Table}
+
+\caption{Access/volume Table for O2 with redundancy}
+\end{longtable}
+
+In Table 7 we report the access/volume data related to O1 without redundancy. In this case we have to consider the insertion of a new instance in Customer, and the insertion of a new instance in Belongs\_To to store the receipt the customer had.
+
+\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.14\columnwidth}|p{.14\columnwidth}|p{.20\columnwidth} |}
+
+\hline
+
+\multicolumn{5}{|c|}{\textbf{Operation O1: 10000/month}} \\\hline
+\textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}  \\\hline
+Receipt & Entity  & 1 & W & 1x10000x2 = 20000 \\\hline
+Belongs\_To & Relationship & 1 & W & 1x10000x2 = 20000 \\\hline
+\multicolumn{4}{|c|}{\textbf{Total Access}}  & \textbf{40000}  \\\hline
+
+\caption{Access/volume Table for O1 without redundancy}
 \end{longtable}
 
 
-\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.16\columnwidth}|p{.16\columnwidth}|p{.16\columnwidth} |}
+Table 8 shows how O2 uses the data that is not repeated. We assumed that each customer has an average of 10 receipts per month. 
+
+\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.14\columnwidth}|p{.14\columnwidth}|p{.20\columnwidth} |}
 
 \hline
+
+\multicolumn{5}{|c|} {\textbf{Operation O2: 10/month}} \\\hline
 \textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}  \\\hline
+Customers & Entity & 1 & R & 1x10x1 = 10 \\\hline
+Belongs\_To & Relationship & 10 & R & 10x10x1 = 100 \\\hline
+\multicolumn{4}{|c|}{\textbf{Total Access}}  & \textbf{110}  \\\hline
 
-Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
-
-Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
-
-\caption{Frequency Table}
+\caption{Access/volume Table for O2 without redundancy}
 \end{longtable}
 
+In Table 9, we report the final access counts with and without redundancy. According to the obtained results, we can clearly see that removing the redundant attribute from the Customer entity improves the database load. 
 
-\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.16\columnwidth}|p{.16\columnwidth}|p{.16\columnwidth} |}
-
-\hline
-\textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}  \\\hline
-
-Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
-
-Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
-
-\caption{Frequency Table}
-\end{longtable}s
-
-
-\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.16\columnwidth}|p{.16\columnwidth}|p{.16\columnwidth} |}
+\begin{longtable}{|p{.20\columnwidth}|p{.20\columnwidth} |p{.24\columnwidth} |}
 
 \hline
-\textbf{Concept} & \textbf{Construct} & \textbf{Access} & \textbf{Type} & \textbf{Average Access}  \\\hline
 
-Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
+\multicolumn{3}{|c|} {\textbf{Comparison}}  \\\hline
+\textbf {Operation} & \textbf{With Redundancy}  &\textbf{Without Redundancy}  \\\hline
+O1 & 70000 & 40000 \\\hline
+O2 & 10 & 110 \\\hline
+\textbf{Total access} & \textbf{70010} & \textbf{40110}  \\\hline
 
-Lorem ipsum &  Lorem ipsum & Lorem ipsum & Lorem ipsum & Lorem ipsum \\\hline
-
-\caption{Frequency Table}
+\caption{Comparison of the number of accesses for each operation}
 \end{longtable}
-
 
 \subsection{Relational Schema}
-\includegraphics[scale=0.45, angle=90]{pictures/FDB - HW2 - Relational Schema (1).jpeg}
+\begin{center}
+\includegraphics[scale=0.11, angle=90]{pictures/FDB - HW2 - Relational Schema (3) .png}
+\end{center}
+
+Not all of our customers are going to be part of our loyalty program, so to avoid systematic NULL values, we have decided that Belongs-To relationship should have its own relation.
 
 \subsection{Data Dictionary}
 
 \input{tables/data}
 
 \subsection{External Constraints}
-https://www.overleaf.com/project/65494d6e2dfdbe59123e4dc4
-
-
-What happens if a customer doesnt have an email or if doesn't wanna be part of the loyality programm ???????
-
 
 \begin{itemize}
-    \item Only the employees with the position of ‘Manager’ can check the information about other employees in the shop. They need to login in the system with their Manager identificator.
-    \item HR employees can edit the info of the employees.
-    \item Authorized employee can check and edit the information of the products.
+    \item Only the employees with the position of ‘Manager’ can check the information about other employees in the shop. They need to login in the system with their Manager identification credentials.
+    \item Human Resources employees can edit the information of the employees, as well as add or delete them.
+    \item Authorized employees can check and edit the information of the products.
     \item Backups are meant to be done every shift change in order to avoid mistakes.
     \item The employees of a store can see the products' quantities of another store but cannot change them.
-    \item Only one person can enter stock into a store. (login information is requested.)?? Can anyone view stocks? Do I need to log in to make changes?
-    \item No one except the stock tracker can see the stocks in the store. It cannot be renewed or changed.
-    \item Only 1 promotion can be applied to a product at the same store. Two promotions cannot be applied at the same time. This means that we cannot apply other promotions to the product until the previous one reaches its ending date. (Really like this one)
+    \item If authorized employees of a store wants to view or update stock inventory into a store, login information is requested.
+    \item Only 1 promotion can be applied to a product at the same time in a store. Two promotions cannot be applied at the same time. This means that we cannot apply other promotions to the product until the previous one reaches its ending date.
 \end{itemize}
 
  
