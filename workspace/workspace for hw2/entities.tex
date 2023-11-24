@@ -1,78 +1,79 @@
-\begin{longtable}{|p{.14\columnwidth}|p{.20\columnwidth} |p{.40\columnwidth}|p{.18\columnwidth} |} 
+\begin{longtable}{|p{.14\columnwidth}|p{.20\columnwidth} |p{.45\columnwidth}|p{.15\columnwidth} |} 
 \hline
 \textbf{Entity} & \textbf{Description} & \textbf{Attributes} & \textbf{Identifier}  \\\hline
 
 
 Product & Items sold in the supermarkets & \begin{itemize}
-        \vspace{-1em}
-        \item ProductID: unique identifier
-        \item Name: brief description of the product
-        \item UPC: Universal Product Code
-        \item VAT: Value-Added Tax
-        \item Price: the amount customer has to pay
+        \vspace{-1.5em}
+        \item ProductID: unique identifier (serial)
+        \item Name: brief description of the product (text)
+        \item UPC: Universal Product Code (serial)
+        \item VAT: Value-Added Tax (float)
+        \item Price: the amount customer has to pay (float)
     \end{itemize}
  &  ProductID \\\hline
  
  Store & Where customers buy products & \begin{itemize}
-        \vspace{-1em}
-        \item StoreID: unique identifier
-        \item Location: the place where store is
-        \item Schedule: the store timetable
-        \item ManagerID: an employee who runs the store
+        \vspace{-1.5em}
+        \item StoreID: unique identifier (serial)
+        \item Location: the place where store is (text)
+        \item Schedule: the store timetable (datetime)
     \end{itemize}
  &  StoreID \\\hline
 
   Receipt & Contains information about each purchase & \begin{itemize}
-        \vspace{-1em}
-        \item ReceiptID: unique identifier
-        \item Date: the time when the payment is done
-        \item Quantity: how much the customer bought from a specific product
-        \item TotalPrice: the amount customer paid for all products
-        \item PaymentMethod: a way how customer made payment
+        \vspace{-1.5em}
+        \item ReceiptID: unique identifier (serial)
+        \item Date: the time when the payment is done (datetime)
+        \item TotalPrice: the amount customer paid for all products (float)
+        \item PaymentMethod: a way of how a customer made the payment (text)
     \end{itemize}
  &  ReceiptID \\\hline
 
   Supplier & A company that supplies the product & \begin{itemize}
-        \vspace{-1em}
-        \item SupplierID: unique identifier
-        \item Address: the place where supplier is
-        \item ContactInfo: how to reach the supplier (phone,e-mail, etc.)
-        \item ContractDetails: details like MOQ, payment methods, where and how to deliver goods, penalties, etc. 
+        \vspace{-1.5em}
+        \item SupplierID: unique identifier (serial)
+        \item Address: the place where supplier is (text)
+        \item Phone: the telephone number of the supplier (text)
+        \item E-mail: Electronic mail address of the supplier (text)
+        \item ContractInfo: details of the contract between supplier and store (text)
     \end{itemize}
  &  SupplierID \\\hline
 
-  Customer & A person who buys product at a store & \begin{itemize}
-        \vspace{-1em}
-        \item E-mail: unique identifier
-        \item Name
-        \item Surname
-        \item DateOfBirth
-        \item Gender
-        \item Password
-        \item LoyaltyPoints: represent the points of customer registered in the loyalty program
+  Customer & A client registered in the loyalty program & \begin{itemize}
+        \vspace{-1.5em}
+        \item E-mail: unique identifier (text)
+        \item Name: name of the customer (text)
+        \item Surname: surmane of the customer (text)
+        \item DateOfBirth: birth date of the customer (datetime)
+        \item Gender: Gender of the customer (text)
+        \item Password: the code required to enter the loyalty program (text)
+        \item LoyaltyPoints: represent the points of customer registered in the loyalty program (integer)
     \end{itemize}
  &  E-mail \\\hline
 
-  Category & to which products belong & \begin{itemize}
-        \vspace{-1em}
-        \item CategoryName: unique identifier
+  Category & Categories to which products belong & \begin{itemize}
+        \vspace{-1.5em}
+        \item CategoryName: unique identifier (text)
     \end{itemize}
  &  CategoryName \\\hline 
 
-  Employee & a person who works in a store & \begin{itemize}
-        \vspace{-1em}
-        \item EmployeeID: unique identifier
-        \item Name
-        \item Surname
-        \item HireDate: a time when an employee hired
-        \item Salary: amount to be paid an employee monthly
+  Employee & A person who works in a store & \begin{itemize}
+        \vspace{-1.5em}
+        \item EmployeeID: unique identifier (serial)
+        \item Name (text)
+        \item Surname (text)
+        \item HireDate: a time when an employee hired (datetime)
+        \item Salary: amount to be paid an employee monthly (float)
     \end{itemize}
  &  EmployeeID \\\hline
 
-  Position & a title of an employee & \begin{itemize}
-        \vspace{-1em}
-        \item PositionName: unique identifier
+  Position & A title of an employee & \begin{itemize}
+        \vspace{-1.5em}
+        \item PositionName: unique identifier (text)
     \end{itemize}
  &  PositionName \\\hline
+
+
 
 \end{longtable}
