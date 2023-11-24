@@ -1,24 +1,28 @@
-\begin{longtable}{|p{.15\columnwidth}|p{.35\columnwidth} |p{.25\columnwidth}|p{.20\columnwidth} |} 
+\begin{longtable}{|p{.15\columnwidth}|p{.35\columnwidth} |p{.27\columnwidth}|p{.18\columnwidth} |} 
 \hline
 \textbf{Relationship} & \textbf{Description} & \textbf{Component Entities} & \textbf{Attributes} \\\hline
 
 
- StoredIn & Number of a specific product stored in a store & \begin{itemize}
-        \vspace{-1em}
+ Stores & Number of a specific product stored in a store, its re-order level and the order quantity & \begin{itemize}
+        \vspace{-1.5em}
         \item Product (0,N)
         \item Store (0,N)
     \end{itemize}
- &  StockQuantity \\\hline
+ &  StockQuantity
  
- Contains (or Generates?) & Products bought that are printed in the receipt & \begin{itemize}
-        \vspace{-1em}
+ ReOrderLevel
+ 
+ OrderQuantity\\\hline
+ 
+ Contains & Products bought that are printed in the receipt & \begin{itemize}
+        \vspace{-1.5em}
         \item Product (0,N)
         \item Receipt (1,N)
     \end{itemize}
- & Quantity? (here or in the Receipt Entity?) \\\hline
+ & Quantity \\\hline
 
- Promotion & Discounts for the products & \begin{itemize}
-        \vspace{-1em}
+ Promotion & Discounts for the products in a store & \begin{itemize}
+        \vspace{-1.5em}
         \item Product (0,N)
         \item Store (0,N)
     \end{itemize}
@@ -27,58 +31,56 @@
  DiscountInfo \\\hline
 
  Supply & Associates a product with its supplier & \begin{itemize}
-        \vspace{-1em}
+        \vspace{-1.5em}
         \item Product (1,1)
-        \item Supplier (1,N)
+        \item Supplier (0,N)
     \end{itemize}
  & --- \\\hline
 
  Belongs & Associates a product with its category & \begin{itemize}
-        \vspace{-1em}
+        \vspace{-1.5em}
         \item Product (1,1)
-        \item Category (1,N) ?
+        \item Category (0,N)
     \end{itemize}
  & --- \\\hline
 
- GeneratedBy & In which store was a receipt generated & \begin{itemize}
-        \vspace{-1em}
+ Generated\_By & In which store was a receipt generated & \begin{itemize}
+        \vspace{-1.5em}
         \item Receipt (1,1)
         \item Store (0,N) 
     \end{itemize}
  & --- \\\hline
 
- WorksIn & Associates a worker with a store which they work & \begin{itemize}
-        \vspace{-1em}
+ Works\_In & Associates a worker with the store they work in & \begin{itemize}
+        \vspace{-1.5em}
         \item Employee (1,1)
         \item Store (1,N)
     \end{itemize}
  & --- \\\hline
 
- SuppliesTo & Associates a supplier with a store & \begin{itemize}
-        \vspace{-1em}
-        \item Supplier (1,N)
-        \item Store (1,N)
+ Supplies\_To & Associates a supplier with the stores they are currently supplying & \begin{itemize}
+        \vspace{-1.5em}
+        \item Supplier (0,N)
+        \item Store (0,N)
     \end{itemize}
- & ReOrderLevel
- 
- OrderQuantity \\\hline
+ & --- \\\hline
 
- BelongsTo & associates the customer with the receipt (if customer used the loyalty program while purchasing) & \begin{itemize}
-        \vspace{-1em}
+ Belongs\_To & Associates the customer with the receipt (if customer used the loyalty program while purchasing) & \begin{itemize}
+        \vspace{-1.5em}
         \item Customer (0,N) 
-        \item Receipt (0,1) ?
+        \item Receipt (0,1) 
     \end{itemize}
  & --- \\\hline
 
  Prefers & Which store does customer prefer & \begin{itemize}
-        \vspace{-1em}
+        \vspace{-1.5em}
         \item Customer (0,1) 
         \item Store (0,N) 
     \end{itemize}
  & --- \\\hline
 
- Holds & Associates an employee with a position in a store & \begin{itemize}
-        \vspace{-1em}
+ Holds & Associates an employee with a position & \begin{itemize}
+        \vspace{-1.5em}
         \item Employee (1,1)
         \item Position (0,N)
     \end{itemize}
