@@ -115,7 +115,7 @@ INSERT INTO Employee (EmployeeID, Name, Surname, Salary, Position, StoreID) VALU
 (9, 'Chris', 'Harris', 60000, 'Manager', 6),
 (10, 'Emma', 'Evans', 40000, 'Assistant Manager', 1),
 (11, 'Jack', 'Roberts', 50000, 'Sales Associate', 2),
-(12, 'Sophie', 'Miller', 75000, 'Customer Service Representative', 3),
+(12, 'Sophie', 'Miller', 75000, 'Cashier', 3),
 (13, 'Matthew', 'Clark', 42000, 'Marketing Coordinator', 4),
 (14, 'Olivia', 'Johnson', 48000, 'Stock Clerk', 5),
 (15, 'Daniel', 'White', 38000, 'Sales Associate', 6),
