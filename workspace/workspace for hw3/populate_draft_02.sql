@@ -1,28 +1,24 @@
-
-
-
 --populating the database 
 
-INSERT INTO Category (CategoryName) VALUES
-    ('Fresh Produce'), --01
-    ('Bakery and Pastries'), --02
-    ('Dairy and Eggs'), --03
-    ('Meat and Seafood'), --04
-    ('Frozen Foods'), --05
-    ('Grocery and Staples'), --06
-    ('Beverages'), --07
-    ('Snacks'), --08
-    ('Cereal and Breakfast Foods'), --09
-    ('Condiments and Sauces'), --10
-    ('Household and Cleaning Supplies'), --11
-    ('Health and Beauty'), --12
-    ('Pet Supplies'), --13
-    ('Baby Care'), --14
-    ('Electronics and Appliances'); --15
+INSERT INTO Category (categoryname) VALUES
+    ('Fresh Produce'), 
+    ('Bakery and Pastries'), 
+    ('Dairy and Eggs'), 
+    ('Meat and Seafood'), 
+    ('Frozen Foods'), 
+    ('Grocery and Staples'), 
+    ('Beverages'), 
+    ('Snacks'), 
+    ('Cereal and Breakfast Foods'), 
+    ('Condiments and Sauces'), 
+    ('Household and Cleaning Supplies'), 
+    ('Health and Beauty'), 
+    ('Pet Supplies'), 
+    ('Baby Care'), 
+    ('Electronics and Appliances'); 
 
 
-
-INSERT INTO Products (ProductID, UPC, Name, VAT, Price, Category) VALUES
+INSERT INTO Product (productid, upc, name, vat, price, category) VALUES
     (01001, 123456789012, 'FreshHarvest Organic Golden Apple', 0.04, 2.99, 'Fresh Produce'),
     (03001, 345678901234, 'Whooole Milk', 0.12, 4.49, 'Dairy and Eggs'),
     (04001, 456789012345, 'DeliMaster Smoked Chicken Breast', 0.22, 8.89, 'Meat and Seafood'),
@@ -33,7 +29,7 @@ INSERT INTO Products (ProductID, UPC, Name, VAT, Price, Category) VALUES
     (09001, 901234567890, 'Kelligs Oatmeal', 0.04, 4.20, 'Cereal and Breakfast Foods'),
     (10001, 112233445566, 'Heinz Ketchup', 0.10, 2.50, 'Condiments and Sauces'),
     (11001, 223344556677, 'Lily Paper Towels', 0.22, 3.40, 'Household and Cleaning Supplies'),
-    (12001, 334455667788, 'L’oreal Paris Shampoo', 0.22, 5.70, 'Health and Beauty'),
+    (12001, 334455667788, 'Loreal Paris Shampoo', 0.22, 5.70, 'Health and Beauty'),
     (13001, 445566778899, 'Whiskas Premium Dog Food', 0.10, 4.79, 'Pet Supplies'),
     (14001, 556677889900, 'Garnier RevitalizingDiapers', 0.04, 8.49, 'Baby Care'),
     (15001, 667788990011, 'Varta AA Batteries', 0.22, 6.99, 'Electronics and Appliances'),
@@ -86,116 +82,218 @@ INSERT INTO Products (ProductID, UPC, Name, VAT, Price, Category) VALUES
     (15004, 129956787712, 'TechCo Smartphone X1', 0.22, 599.99, 'Electronics and Appliances'),
     (15005, 238697890123, 'ElectroTech Laptop ProBook', 0.22, 899.99, 'Electronics and Appliances'),
     (12005, 001122334455, 'Marvis Whitening Toothpaste', 0.10, 1.79, 'Health and Beauty');
-
-
     
 
-INSERT INTO Supplier (SupplierID, Address, Phone, Email, ContractDetails) VALUES
-    (1110101, '123 Main Street, Milan, Italy', '+39 02 1234567', 'italianfood@example.com', 'Supply of Italian food products'),
-    (3330101, '456 Global Avenue, Worldwide', '+1 555 9876543', 'globalfoods@example.com', 'International food distribution'),
-    (1110102, '789 Supplier Lane, Rome, Italy', '+39 06 8765432', 'romefoods@example.com', 'Local specialties and produce'),
-    (2220101, '101 International Street, Paris, France', '+33 1 23456789', 'frenchdelights@example.com', 'French cuisine products'),
-    (4440101, '202 World Market Road, Tokyo, Japan', '+81 3 98765432', 'tokyogroceries@example.com', 'Japanese food supplies');
-    (2220102, '303 International Boulevard, Madrid, Spain', '+34 91 8765432', 'spanishfoods@example.com', 'Authentic Spanish products'),
-    (2220103, '404 Supplier Street, Berlin, Germany', '+49 30 98765432', 'germanmarket@example.com', 'German delicacies and goods'),
-    (2220104, '505 Supplier Square, London, UK', '+44 20 12345678', 'britishgrocery@example.com', 'British grocery supplies'),
-    (4440102, '606 Exotic Street, Bangkok, Thailand', '+66 2 34567890', 'thaiexports@example.com', 'Thai food exports'),
-    (4440103, '707 Supplier Lane, Mumbai, India', '+91 22 23456789', 'indianimports@example.com', 'Indian food imports');
-    (3330102, '808 Tropical Street, Rio de Janeiro, Brazil', '+55 21 987654321', 'brazilianfoods@example.com', 'Authentic Brazilian products'),
-    (4440104, '909 Exotic Lane, Seoul, South Korea', '+82 2 12345678', 'koreangroceries@example.com', 'Korean food supplies'),
-    (4440105, '101 Supplier Plaza, Beijing, China', '+86 10 87654321', 'chinesemarket@example.com', 'Chinese grocery distribution'),
-    (4440106, '202 Spices Street, New Delhi, India', '+91 11 23456789', 'indianspices@example.com', 'Indian spices and herbs');
-    (3330103, '303 Tech Street, San Francisco, USA', '+1 415 1234567', 'techgadgets@example.com', 'Electronics and gadgets supply'),
-    (4440107, '404 Appliances Avenue, Seoul, South Korea', '+82 2 98765432', 'koreanappliances@example.com', 'Korean home appliances distribution');
+INSERT INTO Store (storeid, location, schedule) VALUES
+    (3901, '123 Main Street', 'Mon-Fri: 9 AM - 6 PM, Sat: 10 AM - 4 PM'),
+    (3902, '456 Oak Avenue', 'Mon-Fri: 8 AM - 7 PM, Sat-Sun: 9 AM - 5 PM'),
+    (3903, '789 Maple Drive', 'Mon-Sun: 10 AM - 8 PM'),
+    (3904, '101 Pine Lane', 'Mon-Fri: 8:30 AM - 5:30 PM, Sat: 11 AM - 3 PM'),
+    (3905, '202 Cedar Street', 'Mon-Fri: 10 AM - 6 PM, Sat: 10:30 AM - 2:30 PM'),
+    (3906, '303 Elm Road', 'Mon-Fri: 9 AM - 5 PM, Sat: 10 AM - 3 PM'),
+    (3907, '404 Birch Boulevard', 'Mon-Sun: 11 AM - 9 PM'),
+    (3908, '505 Redwood Lane', 'Mon-Fri: 8:30 AM - 6 PM, Sat: 9 AM - 2 PM'),
+    (3909, '606 Walnut Street', 'Mon-Fri: 10 AM - 7 PM, Sun: 12 PM - 5 PM'),
+    (3910, '707 Spruce Avenue', 'Mon-Sun: 9 AM - 8 PM');
 
 
-INSERT INTO Store (StoreID, Location, Schedule) VALUES
-	(3901, '123 Main Street', 'Mon-Fri: 9 AM - 6 PM, Sat: 10 AM - 4 PM'),
-	(3902, '456 Oak Avenue', 'Mon-Fri: 8 AM - 7 PM, Sat-Sun: 9 AM - 5 PM'),
-	(3903, '789 Maple Drive', 'Mon-Sun: 10 AM - 8 PM'),
-	(3904, '101 Pine Lane', 'Mon-Fri: 8:30 AM - 5:30 PM, Sat: 11 AM - 3 PM'),
-	(3905, '202 Cedar Street', 'Mon-Fri: 10 AM - 6 PM, Sat: 10:30 AM - 2:30 PM'),
-	(3906, '303 Elm Road', 'Mon-Fri: 9 AM - 5 PM, Sat: 10 AM - 3 PM'),
-	(3907, '404 Birch Boulevard', 'Mon-Sun: 11 AM - 9 PM'),
-	(3908, '505 Redwood Lane', 'Mon-Fri: 8:30 AM - 6 PM, Sat: 9 AM - 2 PM'),
-	(3909, '606 Walnut Street', 'Mon-Fri: 10 AM - 7 PM, Sun: 12 PM - 5 PM'),
-	(3910, '707 Spruce Avenue', 'Mon-Sun: 9 AM - 8 PM');
+INSERT INTO Stores (productid, storeid, stockquantity, reorderlevel, orderquantity) VALUES
+    (01001, 3901, 100, 20, 50),
+    (03001, 3902, 150, 30, 70),
+    (04001, 3903, 200, 40, 80),
+    (05001, 3904, 120, 25, 60),
+    (06001, 3905, 180, 35, 90),
+    (07001, 3906, 90, 15, 40),
+    (08001, 3907, 130, 30, 60),
+    (09001, 3908, 160, 20, 50),
+    (10001, 3909, 110, 25, 55),
+    (11001, 3910, 70, 10, 30),
+    (12001, 3901, 50, 8, 20),
+    (10005, 3902, 80, 12, 35),
+    (11003, 3903, 60, 10, 25),
+    (12004, 3904, 40, 8, 20),
+    (13005, 3905, 30, 5, 15),
+    (14004, 3906, 25, 4, 12),
+    (15003, 3907, 20, 3, 10),
+    (15004, 3908, 15, 2, 8);  
+  
+
+INSERT INTO Promotion (productid, storeid, start_enddates, discountinfo) VALUES
+    (15003, 3909, '2024-02-01 to 2024-02-28', '20% off on Blitz Blender'),
+    (03001, 3901, '2024-03-10 to 2024-03-31', '25% off on Whooole Milk'),
+    (04001, 3902, '2024-01-15 to 2024-02-15', '15% off on DeliMaster Smoked Chicken Breast'),
+    (09001, 3903, '2024-04-10 to 2024-04-30', '30% off on Kelligs Oatmeal'),
+    (06001, 3904, '2024-01-20 to 2024-02-28', '20% off on NatureHarbor Organic Canned Beans'),
+    (07001, 3905, '2024-03-01 to 2024-03-31', '25% off on Pepsi Cola'),
+    (08001, 3906, '2024-02-05 to 2024-02-28', '12% off on Lays Potato Chips'),
+    (10001, 3907, '2024-01-05 to 2024-02-15', '18% off on Heinz Ketchup'),
+    (11001, 3908, '2024-04-01 to 2024-04-30', '30% off on Lily Paper Towels'),
+    (12001, 3909, '2024-02-15 to 2024-03-15', '15% off on Loreal Paris Shampoo'),
+    (13005, 3910, '2024-03-15 to 2024-04-15', '25% off on Happy Pup Dog Toy'),
+    (11003, 3901, '2024-01-10 to 2024-02-10', '10% off on Clean Sweep Broom'),
+    (14004, 3902, '2024-04-01 to 2024-04-15', '18% off on SoftTouch Baby Wipes'),
+    (15004, 3903, '2024-03-05 to 2024-03-31', '20% off on TechCo Smartphone X1'),
+    (12004, 3904, '2024-01-01 to 2024-01-31', '10% off on Fresh Breeze Deodorant'),
+    (10005, 3905, '2024-02-20 to 2024-03-20', '15% off on FireBlast Hot Sauce'),
+    (04001, 3906, '2024-04-10 to 2024-04-30', '30% off on DeliMaster Smoked Chicken Breast'),
+    (15003, 3907, '2024-01-05 to 2024-02-28', '12% off on Blitz Blender'),
+    (03001, 3908, '2024-01-15 to 2024-02-15', '15% off on Whooole Milk'),
+    (08001, 3909, '2024-03-01 to 2024-03-31', '25% off on Lays Potato Chips'),
+    (11001, 3910, '2024-02-05 to 2024-02-28', '12% off on Lily Paper Towels'),
+    (09001, 3901, '2024-04-01 to 2024-04-30', '30% off on Kelligs Oatmeal');
 
 
-INSERT INTO Position (Position) VALUES
-	('Manager'),
-	('Cashier'),
-	('Stock Clerk'),
-	('Marketing Coordinator'),
-	('Assistant Manager'),
-	('Sales Associate'),
-	('Customer Service Representative');
+INSERT INTO Supplier (supplierid, address, email, contractdetails, phone) VALUES
+    (1110101, '123 Main Street, Milan, Italy', 'italianfood@example.com', 'Supply of Italian food products', '+39 02 1234567'),
+    (3330101, '456 Global Avenue, Worldwide', 'globalfoods@example.com', 'International food distribution', '+1 555 9876543'),
+    (1110102, '789 Supplier Lane, Rome, Italy', 'romefoods@example.com', 'Local specialties and produce', '+39 06 8765432'),
+    (2220101, '101 International Street, Paris, France', 'frenchdelights@example.com', 'French cuisine products', '+33 1 23456789'),
+    (4440101, '202 World Market Road, Tokyo, Japan', 'tokyogroceries@example.com', 'Japanese food supplies', '+81 3 98765432');
+    (2220102, '303 International Boulevard, Madrid, Spain', 'spanishfoods@example.com', 'Authentic Spanish products', '+34 91 8765432'),
+    (2220103, '404 Supplier Street, Berlin, Germany', 'germanmarket@example.com', 'German delicacies and goods', '+49 30 98765432'),
+    (2220104, '505 Supplier Square, London, UK', 'britishgrocery@example.com', 'British grocery supplies', '+44 20 12345678'),
+    (4440102, '606 Exotic Street, Bangkok, Thailand', 'thaiexports@example.com', 'Thai food exports', '+66 2 34567890'),
+    (4440103, '707 Supplier Lane, Mumbai, India', 'indianimports@example.com', 'Indian food imports', '+91 22 23456789');
+    (3330102, '808 Tropical Street, Rio de Janeiro, Brazil', 'brazilianfoods@example.com', 'Authentic Brazilian products', '+55 21 987654321'),
+    (4440104, '909 Exotic Lane, Seoul, South Korea', 'koreangroceries@example.com', 'Korean food supplies', '+82 2 12345678'),
+    (4440105, '101 Supplier Plaza, Beijing, China', 'chinesemarket@example.com', 'Chinese grocery distribution', '+86 10 87654321'),
+    (4440106, '202 Spices Street, New Delhi, India', 'indianspices@example.com', 'Indian spices and herbs', '+91 11 23456789');
+    (3330103, '303 Tech Street, San Francisco, USA', 'techgadgets@example.com', 'Electronics and gadgets supply', '+1 415 1234567'),
+    (4440107, '404 Appliances Avenue, Seoul, South Korea', 'koreanappliances@example.com', 'Korean home appliances distribution', '+82 2 98765432');
+    (1110103, 'Via Patriarcato, 44, Padova, Italia', 'padovagoodies@gmail.com', 'Fresh fruits and vegetables supplier', '+39 111 1234567'),
+    (2220105, 'Avinguda de la Riera de Cassoles, 26, Gracia, Barcelona, Spain', 'bigbarcelonaprod@gmail.com', 'Electronic household appliences supply', '+34 123 456 789')
+    (2220106, 'Beysehir Yolu Uzeri, 47, Meram, Konya, Turkey', 'torkusuturunleri@gmail.com', 'Turkish special products supplier', '+90 342 489 1236')
 
 
-INSERT INTO Employee (EmployeeID, Name, Surname, Salary, Position, StoreID) VALUES
-	(1001, 'John', 'Walter', 60000, 'Manager', 3901),
-	(1002, 'Paula', 'Smith', 30000, 'Cashier', 3902),
-	(1003, 'Bob', 'Johnson', 25000, 'Stock Clerk', 3903),
-	(1004, 'Emily', 'Davis', 70000, 'Marketing Coordinator', 3901),
-	(1005, 'Michael', 'Brown', 45000, 'Assistant Manager', 3901),
-	(1006, 'Sara', 'Wilson', 55000, 'Sales Associate', 3903),
-	(1007, 'David', 'Lee', 35000, 'Customer Service Representative', 3904),
-	(1008, 'Alice', 'Taylor', 32000, 'Cashier', 3905),
-	(1009, 'Chris', 'Harris', 60000, 'Manager', 3902),
-	(1010, 'Emma', 'Evans', 40000, 'Assistant Manager', 3902),
-	(1011, 'Jack', 'Roberts', 50000, 'Sales Associate', 3902),
-	(1012, 'Sophie', 'Miller', 75000, 'Cashier', 3903),
-	(1013, 'Matthew', 'Clark', 42000, 'Marketing Coordinator', 3904),
-	(1014, 'Olivia', 'Johnson', 48000, 'Stock Clerk', 3905),
-	(1015, 'Daniel', 'White', 38000, 'Sales Associate', 3906)
-	(1016, 'Jessica', 'Moore', 32000, 'Cashier', 3901),
-	(1017, 'David', 'Wilson', 33000, 'Cashier', 3904),
-	(1018, 'Mia', 'Martin', 55000, 'Sales Associate', 3903),
-	(1019, 'Ethan', 'Garcia', 35000, 'Customer Service Representative', 3904),
-	(1020, 'Ava', 'Smith', 40000, 'Cashier', 3905),
-	(1021, 'William', 'Jones', 62000, 'Manager', 3903),
-	(1022, 'Ella', 'Davis', 42000, 'Assistant Manager', 3903),
-	(1023, 'James', 'Taylor', 50000, 'Sales Associate', 3902),
-	(1024, 'Aiden', 'Hill', 75000, 'Marketing Coordinator', 3903),
-	(1025, 'Lily', 'Moore', 48000, 'Stock Clerk', 3904),
-	(1026, 'Benjamin', 'Wilson', 38000, 'Sales Associate', 3905),
-	(1027, 'Zoe', 'Ward', 57000, 'Manager', 3904),
-	(1028, 'Henry', 'Brown', 42000, 'Assistant Manager', 3904),
-	(1029, 'Grace', 'Allen', 52000, 'Sales Associate', 3902),
-	(1030, 'Jackson', 'Perez', 73000, 'Cashier', 3903),
-	(1031, 'Madison', 'Carter', 46000, 'Marketing Coordinator', 3904),
-	(1032, 'Lucas', 'Thomas', 40000, 'Stock Clerk', 3905),
-	(1033, 'Chloe', 'Baker', 36000, 'Sales Associate', 3906),
-	(1034, 'Logan', 'Gonzalez', 59000, 'Manager', 3905),
-	(1035, 'Avery', 'Fisher', 42000, 'Assistant Manager', 3905),
-	(1036, 'Elijah', 'Hall', 51000, 'Sales Associate', 3903),
-	(1037, 'Scarlett', 'Parker', 34000, 'Customer Service Representative', 3904),
-	(1038, 'Mason', 'Cruz', 43000, 'Cashier', 3905),
-	(1039, 'Addison', 'Morgan', 67000, 'Manager', 3906),
-	(1040, 'Aubrey', 'Butler', 38000, 'Assistant Manager', 3906),
-	(1041, 'Liam', 'Barnes', 49000, 'Sales Associate', 3902),
-	(1042, 'Evelyn', 'Cooper', 72000, 'Marketing Coordinator', 3903),
-	(1043, 'Noah', 'Harrison', 42000, 'Stock Clerk', 3904),
-	(1044, 'Aria', 'Reed', 36000, 'Sales Associate', 3905),
-	(1045, 'Sebastian', 'Sullivan', 60000, 'Manager', 3907), 
-	(1046, 'Ryan', 'Anderson', 45000, 'Assistant Manager', 3903), 
-	(1047, 'Sophia', 'Evans', 40000, 'Assistant Manager', 3907),
-	(1048, 'Ethan', 'Reed', 35000, 'Customer Service Representative', 3907),
-	(1049, 'Isabella', 'Gonzalez', 32000, 'Cashier', 3907),
-	(1050, 'Alexander', 'Fisher', 55000, 'Sales Associate', 3907),
-	(1051, 'Olivia', 'Jones', 70000, 'Marketing Coordinator', 3907),
-	(1052, 'Aiden', 'Barnes', 75000, 'Manager', 3908),
-	(1053, 'Emma', 'Hill', 42000, 'Assistant Manager', 3908),
-	(1054, 'Mia', 'Ward', 50000, 'Sales Associate', 3908),
-	(1055, 'Lucas', 'Brown', 32000, 'Cashier', 3908),
-	(1056, 'Sophie', 'Clark', 55000, 'Sales Associate', 3908),
-	(1057, 'Liam', 'Perez', 73000, 'Cashier', 3909),
-	(1058, 'Chloe', 'Carter', 46000, 'Marketing Coordinator', 3909),
-	(1059, 'Noah', 'Thomas', 40000, 'Stock Clerk', 3909),
-	(1060, 'Aria', 'Baker', 36000, 'Sales Associate', 3909),
-	(1061, 'Sebastian', 'Moore', 32000, 'Cashier', 3909),
-	(1062, 'Ryan', 'Fisher', 45000, 'Assistant Manager', 3910),
-	(1063, 'Sophia', 'Garcia', 35000, 'Customer Service Representative', 3910),
-	(1064, 'Ethan', 'Wilson', 32000, 'Cashier', 3910),
-	(1065, 'Isabella', 'Clark', 55000, 'Sales Associate', 3910),
-	(1066, 'Alexander', 'Davis', 70000, 'Marketing Coordinator', 3910);
+INSERT INTO Supplies(productid, supplierid, storeid, quantity) VALUES
+    (01001, 1110103, 3901, 250), 
+    (02001, 2220102, 3901, 200),  
+    (03001, 1110102, 3902, 300),  
+    (04001, 4440105, 3902, 150),  
+    (05001, 1110101, 3903, 400);  
+
+
+INSERT INTO Position (positionname) VALUES
+    ('Manager'),
+    ('Cashier'),
+    ('Stock Clerk'),
+    ('Marketing Coordinator'),
+    ('Assistant Manager'),
+    ('Sales Associate'),
+    ('Customer Service Representative');
+
+
+INSERT INTO Employee (employeeid, name, surname, salary, position, storeid) VALUES
+    (1001, 'John', 'Walter', 60000, 'Manager', 3901),
+    (1002, 'Paula', 'Smith', 30000, 'Cashier', 3902),
+    (1003, 'Bob', 'Johnson', 25000, 'Stock Clerk', 3903),
+    (1004, 'Emily', 'Davis', 70000, 'Marketing Coordinator', 3901),
+    (1005, 'Michael', 'Brown', 45000, 'Assistant Manager', 3901),
+    (1006, 'Sara', 'Wilson', 55000, 'Sales Associate', 3903),
+    (1007, 'David', 'Lee', 35000, 'Customer Service Representative', 3904),
+    (1008, 'Alice', 'Taylor', 32000, 'Cashier', 3905),
+    (1009, 'Chris', 'Harris', 60000, 'Manager', 3902),
+    (1010, 'Emma', 'Evans', 40000, 'Assistant Manager', 3902),
+    (1011, 'Jack', 'Roberts', 50000, 'Sales Associate', 3902),
+    (1012, 'Sophie', 'Miller', 75000, 'Cashier', 3903),
+    (1013, 'Matthew', 'Clark', 42000, 'Marketing Coordinator', 3904),
+    (1014, 'Olivia', 'Johnson', 48000, 'Stock Clerk', 3905),
+    (1015, 'Daniel', 'White', 38000, 'Sales Associate', 3906)
+    (1016, 'Jessica', 'Moore', 32000, 'Cashier', 3901),
+    (1017, 'David', 'Wilson', 33000, 'Cashier', 3904),
+    (1018, 'Mia', 'Martin', 55000, 'Sales Associate', 3903),
+    (1019, 'Ethan', 'Garcia', 35000, 'Customer Service Representative', 3904),
+    (1020, 'Ava', 'Smith', 40000, 'Cashier', 3905),
+    (1021, 'William', 'Jones', 62000, 'Manager', 3903),
+    (1022, 'Ella', 'Davis', 42000, 'Assistant Manager', 3903),
+    (1023, 'James', 'Taylor', 50000, 'Sales Associate', 3902),
+    (1024, 'Aiden', 'Hill', 75000, 'Marketing Coordinator', 3903),
+    (1025, 'Lily', 'Moore', 48000, 'Stock Clerk', 3904),
+    (1026, 'Benjamin', 'Wilson', 38000, 'Sales Associate', 3905),
+    (1027, 'Zoe', 'Ward', 57000, 'Manager', 3904),
+    (1028, 'Henry', 'Brown', 42000, 'Assistant Manager', 3904),
+    (1029, 'Grace', 'Allen', 52000, 'Sales Associate', 3902),
+    (1030, 'Jackson', 'Perez', 73000, 'Cashier', 3903),
+    (1031, 'Madison', 'Carter', 46000, 'Marketing Coordinator', 3904),
+    (1032, 'Lucas', 'Thomas', 40000, 'Stock Clerk', 3905),
+    (1033, 'Chloe', 'Baker', 36000, 'Sales Associate', 3906),
+    (1034, 'Logan', 'Gonzalez', 59000, 'Manager', 3905),
+    (1035, 'Avery', 'Fisher', 42000, 'Assistant Manager', 3905),
+    (1036, 'Elijah', 'Hall', 51000, 'Sales Associate', 3903),
+    (1037, 'Scarlett', 'Parker', 34000, 'Customer Service Representative', 3904),
+    (1038, 'Mason', 'Cruz', 43000, 'Cashier', 3905),
+    (1039, 'Addison', 'Morgan', 67000, 'Manager', 3906),
+    (1040, 'Aubrey', 'Butler', 38000, 'Assistant Manager', 3906),
+    (1041, 'Liam', 'Barnes', 49000, 'Sales Associate', 3902),
+    (1042, 'Evelyn', 'Cooper', 72000, 'Marketing Coordinator', 3903),
+    (1043, 'Noah', 'Harrison', 42000, 'Stock Clerk', 3904),
+    (1044, 'Aria', 'Reed', 36000, 'Sales Associate', 3905),
+    (1045, 'Sebastian', 'Sullivan', 60000, 'Manager', 3907), 
+    (1046, 'Ryan', 'Anderson', 45000, 'Assistant Manager', 3903), 
+    (1047, 'Sophia', 'Evans', 40000, 'Assistant Manager', 3907),
+    (1048, 'Ethan', 'Reed', 35000, 'Customer Service Representative', 3907),
+    (1049, 'Isabella', 'Gonzalez', 32000, 'Cashier', 3907),
+    (1050, 'Alexander', 'Fisher', 55000, 'Sales Associate', 3907),
+    (1051, 'Olivia', 'Jones', 70000, 'Marketing Coordinator', 3907),
+    (1052, 'Aiden', 'Barnes', 75000, 'Manager', 3908),
+    (1053, 'Emma', 'Hill', 42000, 'Assistant Manager', 3908),
+    (1054, 'Mia', 'Ward', 50000, 'Sales Associate', 3908),
+    (1055, 'Lucas', 'Brown', 32000, 'Cashier', 3908),
+    (1056, 'Sophie', 'Clark', 55000, 'Sales Associate', 3908),
+    (1057, 'Liam', 'Perez', 73000, 'Cashier', 3909),
+    (1058, 'Chloe', 'Carter', 46000, 'Marketing Coordinator', 3909),
+    (1059, 'Noah', 'Thomas', 40000, 'Stock Clerk', 3909),
+    (1060, 'Aria', 'Baker', 36000, 'Sales Associate', 3909),
+    (1061, 'Sebastian', 'Moore', 32000, 'Cashier', 3909),
+    (1062, 'Ryan', 'Fisher', 45000, 'Assistant Manager', 3910),
+    (1063, 'Sophia', 'Garcia', 35000, 'Customer Service Representative', 3910),
+    (1064, 'Ethan', 'Wilson', 32000, 'Cashier', 3910),
+    (1065, 'Isabella', 'Clark', 55000, 'Sales Associate', 3910),
+    (1066, 'Alexander', 'Davis', 70000, 'Marketing Coordinator', 3910);
+
+
+INSERT INTO RECEIPT (receiptid, totalamount, date, paymentmethod, employeeid, storeid) VALUES
+    (258369, '32.48', '2023-12-15 12:37:50+01', 'CARD', 1001, 3901),
+    (456287, '21.73', '2023-12-14 20:33:32+01', 'CASH', 1008, 3905),
+    (987654, '899.99', '2023-12-16 14:45:20+01', 'CARD', 1001, 3901),
+    (123789, '11.60', '2023-12-14 18:20:45+01', 'CASH', 1054, 3908),
+    (654321, '41.25', '2023-12-17 10:10:05+01', 'CARD', 1045, 3907),
+    (789456, '16.34', '2023-12-15 08:55:30+01', 'CASH', 1002, 3902);
+
+
+INSERT INTO CUSTOMER (email, name, surname, gender, password, dateofbirth, loyaltypoints, storeid) VALUES
+    ('juanhernandez@gmail.com','Juan','Hernandez','Male','Juan1234','2003-01-15',45, 3909),
+    ('lorenzaGT@gmail.com','Lorenza','Grande','Female','Lorenza1234','2000-12-10',89, 3904),
+    ('marco@email.it','Marco','Rossi','Male', 'Marco1234','1992-05-08', 95, 3904),
+    ('giulia@email.it','Giulia','Bianchi','Female','Giulia5678','1985-12-14', 110, 3906),
+    ('paolo@email.it','Paolo','Ferrari','Male','Paolo9876','1980-09-20', 80, 3902),
+    ('carla@gmail.com','Carla','Garcia','Female','Carla1234','1995-07-22', 120, 3901),
+    ('roberto@hotmail.com','Roberto','Martin','Male','Roberto5678','1988-04-18', 75, 3907),
+    ('lucia@yahoo.com','Lucia','Fernandez','Other','Lucia9876','1990-11-30', 50, 3903);
+
+
+INSERT INTO CONTAINS(quantity, receiptid, productid) VALUES
+    (2, 258369, 07004), --2,49*2
+    (1, 789456, 12002), --5,55
+    (1, 123789, 10004), --2,80
+    (2, 123789, 11002), --4,40*2
+    (1, 789456, 14003), --10,79
+	(3, 654321, 06001), --2,29*3
+	(1, 654321, 01002), --3,0
+    (1, 258369, 15002), --25,0
+    (1, 258369, 02004), --2,50
+    (1, 987654, 15005), --899,99
+    (1, 456287, 10005), --2,54
+	(2, 654321, 04003), --15,69*2
+    (3, 456287, 10004), --2,80*3
+    (1, 456287, 14003); --10,79
+
+
+INSERT INTO BELONGSTO(email, receiptid) VALUES
+    ('lucia@yahoo.com', 258369),
+    ('paolo@email.it', 987654),
+    ('marco@email.it', 123789),
+    ('juanhernandez@gmail.com', 789456),
+    (NULL, 456287),
+    (NULL, 654321);
+
