@@ -1,0 +1,19 @@
+
+INSERT INTO EMPLOYEES (employe_ID,First_Name,Last_Name,salary,position,postion_name,store_ID)
+VALUES (1,' Marco,' Tanza,67,000,00,0, 'MANAGER',' Department manager',' 12345);
+INSERT INTO EMPLOYEES (employe_ID,First_Name,Last_Name,salary,position,postion_name,store_ID)
+VALUES (2,' Stiven,' Harley,58,000,00,0, 'Manager'Department Manager',' 13245);
+ININSERT INTO EMPLOYEES (employe_ID,First_Name,Last_Name,salary,position,postion_name,store_ID)
+VALUES (3,' Ganzo,' Laura,27,000.00,3,' employe', 'meat cutter',' 45123);
+INSERT INTO EMPLOYEES (employe_ID,First_Name,Last_Name,salary,position,postion_name,store_ID)
+VALUES (4,'tarik, 'Tuz,31,000,00,02,' worker',' stock clerk,' 12345);
+INSERT INTO EMPLOYEES (mploye_ID,First_Name,Last_Name,salary,position,postion_name,store_ID)
+VALUES (5,' Lews,' Bel,29,000,00,20,' worker, bakery clerk,' 15321);
+INSERT INTO EMPLOYEES (employe_ID,First_Name,Last_Name,salary,position,postion_name,store_ID)
+VALUES (6,' Cherli,' Drek,36,000,00,0,' employe',' product clerk',' 54321);
+INSERT INTO EMPLOYEES (employe_ID,First_Name,Last_Name,salary,position,postion_name,store_ID)
+VALUES (7, 'Mol,' Terz,21,000,00,02,' worker',' Bagger,' 22345);
+INSERT INTO EMPLOYEES (mploye_ID,First_Name,Last_Name,salary,position,postion_name,store_ID)
+VALUES (8,' Maya,' Bel,28,000,00,00,' worker,Deli clerk,' 32334);
+INSERT INTO EMPLOYEES (employe_ID,First_Name,Last_Name,salary,position,postion_name,store_ID)
+VALUES (9,' Der,' Senz,37,000,00,0,' Worker', 'Casher',' 54321);
