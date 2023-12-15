@@ -56,7 +56,7 @@ public class ecommesta {
             start = System.currentTimeMillis();
             st1 = con.createStatement();
             end = System.currentTimeMillis();
-            System.out.printf("Statement 1 Description: For each cashier, get their surname and name, the id of the store they work for and how many times has a customer used the loyalty program when they were attending at the register, and how many of them were unique customers. %n");
+            System.out.printf("%nStatement 1 Description: For each cashier, get their surname and name, the id of the store they work for and how many times has a customer used the loyalty program when they were attending at the register, and how many of them were unique customers. %n");
             System.out.printf("Statement 1 successfully created in %,d milliseconds .%n", end - start);
 
             // Execute the query and get the results
@@ -112,7 +112,7 @@ public class ecommesta {
             start = System.currentTimeMillis();
             st2 = con.createStatement();
             end = System.currentTimeMillis();
-            System.out.printf("Statement 1 Description: For each store, get its id and the percentage of products bought ordered by category during the current month. %n");
+            System.out.printf("%nStatement 2 Description: For each store, get its id and the percentage of products bought ordered by category during the current month. %n");
             System.out.printf("Statement 2 successfully created in %,d milliseconds .%n", end - start);
 
             // Execute second query
@@ -127,11 +127,11 @@ public class ecommesta {
             double percentage;
 
             while (resset2.next()) {
-                storeid2 = resset2.getInt("storeid2");
+                storeid2 = resset2.getInt("store_id");
                 category_name = resset2.getString("category_name");
                 percentage = resset2.getDouble("percentage");
 
-                System.out.printf("%n %s %s %s%n", storeid2, category_name, percentage);
+                System.out.printf("%s %s %s%n", storeid2, category_name, percentage);
             }
 
         } catch (SQLException e) {
