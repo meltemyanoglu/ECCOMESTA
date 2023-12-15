@@ -56,8 +56,8 @@ public class ecommesta {
             start = System.currentTimeMillis();
             st1 = con.createStatement();
             end = System.currentTimeMillis();
-            System.out.printf("%nStatement 1 Description: For each cashier, get their surname and name, the id of the store they work for and how many times has a customer used the loyalty program when they were attending at the register, and how many of them were unique customers. %n");
-            System.out.printf("Statement 1 successfully created in %,d milliseconds .%n", end - start);
+            System.out.printf("%nStatement 1 Description: For each cashier, get their surname and name, the id of the store they work for %nand how many times has a customer used the loyalty program when they were attending at the register, %nand how many of them were unique customers. %n");
+            System.out.printf("%nStatement 1 successfully created in %,d milliseconds.", end - start);
 
             // Execute the query and get the results
             String sqlqr1 =
@@ -77,6 +77,9 @@ public class ecommesta {
 
             System.out.printf("%nQUERY1: Query successfully executed %,d milliseconds.%n", end - start);
             System.out.printf("Query 1 Results: %n");
+            System.out.printf("-----------------------------------------------------------------------%n");
+            System.out.printf("| %-7s | %-8s | %-9s | %-14s | %-16s |%n", "StoreID", "Surname", "Name", "Total Receipts", "Unique Customers");
+            System.out.printf("-----------------------------------------------------------------------%n");
             int storeid;
             String surname;
             String name;
@@ -90,7 +93,7 @@ public class ecommesta {
                 name = resset1.getString("name");
                 total_receipts = resset1.getInt("total_receipts");
                 unique_customers = resset1.getInt("unique_customers");
-                System.out.printf("%s %s %s %s %s%n", storeid, surname, name, total_receipts, unique_customers);
+                System.out.printf("| %-7s | %-8s | %-9s |       %-7s  |        %-9s |%n", storeid, surname, name, total_receipts, unique_customers);
             }
 
             // Create second statement to execute the second query
@@ -112,8 +115,8 @@ public class ecommesta {
             start = System.currentTimeMillis();
             st2 = con.createStatement();
             end = System.currentTimeMillis();
-            System.out.printf("%nStatement 2 Description: For each store, get its id and the percentage of products bought ordered by category during the current month. %n");
-            System.out.printf("Statement 2 successfully created in %,d milliseconds .%n", end - start);
+            System.out.printf("%nStatement 2 Description: For each store, get its id and the percentage of products %nbought ordered by category during the current month. %n");
+            System.out.printf("%nStatement 2 successfully created in %,d milliseconds.", end - start);
 
             // Execute second query
             start = System.currentTimeMillis();
@@ -122,6 +125,9 @@ public class ecommesta {
             System.out.printf("%nQUERY2: Query successfully executed %,d milliseconds.%n", end - start);
 
             System.out.printf("Query 2 Results: %n");
+            System.out.printf("-----------------------------------------------------------%n");
+            System.out.printf("| %-7s | %-32s | %-10s |%n", "StoreID", "Category Name", "Percentage");
+            System.out.printf("-----------------------------------------------------------%n");
             int storeid2;
             String category_name;
             double percentage;
@@ -131,7 +137,7 @@ public class ecommesta {
                 category_name = resset2.getString("category_name");
                 percentage = resset2.getDouble("percentage");
 
-                System.out.printf("%s %s %s%n", storeid2, category_name, percentage);
+                System.out.printf("| %-7s | %-32s | %-10s |%n", storeid2, category_name, percentage);
             }
 
         } catch (SQLException e) {
@@ -154,14 +160,14 @@ public class ecommesta {
                     resset1.close();
                     resset2.close();
                     end = System.currentTimeMillis();
-                    System.out.printf("%nResult sets are successfully closed in final block in %,d milliseconds. %n", end - start );
+                    System.out.printf("%nResult sets are successfully closed in final block in %,d milliseconds.", end - start );
                 }
                 if (st1 != null || st2 != null) {
                     start = System.currentTimeMillis();
                     st1.close();
                     st2.close();
                     end = System.currentTimeMillis();
-                    System.out.printf("%nStatements are successfully closed in final block in %,d milliseconds. %n", end - start);
+                    System.out.printf("%nStatements are successfully closed in final block in %,d milliseconds.", end - start);
                 }
                 if (con != null) {
                     start = System.currentTimeMillis();
