@@ -1,0 +1,18 @@
+\section{Variations to the Relational Schema}
+%\textcolor{red}{[Describe here variations and/or corrections to the relational schema of the previous homework, if present. Otherwise, report only the relational schema.]}
+
+The Figure 1 shows the relational schema after some changes made due to the feedback received in the correction of the second homework.
+\begin{itemize}
+    \item We create a new relationship between Receipt and Employee, called \textbf{Emitted-By}, a one-to-many relationship created to praise the importance of Employee.
+    \item We changed the cardinality of the relation between \textit{Product} and \textit{Supplier}, from a one-to-many to a many-to-many.
+    \item We changed the relationship\textbf{ Supplies-to}, a binary relationship between \textit{Product} and \textit{Supplier}, to \textbf{Supplies}, a ternary relationship between \textit{Supplier}, \textit{Product} and \textit{Store}, with the attribute Quantity, that indicated the amount of product supplied by a supplier to a specific store.
+    \item We deleted the attribute \textit{orderquantity} of the relationship Stores, because now this information in the \textit{Supplies} relationship's attribute, \textbf{quantity}.
+
+\end{itemize}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[angle=90, width=0.7\textwidth]{sections/pictures/FDB - HW2 - Relational Schema 2.png}
+    \caption{Transformed Relational Schema}
+\end{figure}
